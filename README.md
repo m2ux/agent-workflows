@@ -1,4 +1,4 @@
-# agentic-workflows
+# Agent Workflows
 
 A version-controlled collection of prompts, guides, and documentation for agentic software engineering workflows, intended to be consumed by other repositories via submodules.
 
