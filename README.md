@@ -86,22 +86,6 @@ The script:
 | `--skip-metadata` | Skip private metadata submodule |
 | `--keep` | Don't self-destruct after deployment |
 
-### Result
-
-```
-my-project/
-└── .engineering/              # Locally ignored via .git/info/exclude
-    ├── artifacts/
-    │   ├── adr/
-    │   ├── planning/
-    │   ├── reviews/
-    │   └── templates/
-    ├── agent/
-    │   ├── workflows/         # ← This repo (submodule)
-    │   └── metadata/          # Private metadata (sparse checkout)
-    └── scripts/
-```
-
 ### Submodule Management
 
 ```bash
