@@ -1,6 +1,6 @@
 # Agent Workflows
 
-A version-controlled collection of packaged workflows for agentic software engineering, intended to be consumed by other repositories via submodules.
+Packaged workflows for agentic software engineering. Designed to be included as a version-pinned submodule within an orphan `engineering` branch, keeping workflow definitions separate from code history while remaining co-located with the project.
 
 ## Overview
 
