@@ -251,6 +251,9 @@ gh issue list
 **Before EVERY `git add` or `git commit`, verify:**
 
 - [ ] User explicitly requested the commit
+- [ ] For Rust projects: Run `cargo fmt` to format code before committing
+
+**Rust formatting:** Always run `cargo fmt` before staging Rust files. Many Rust projects enforce formatting in CI, and unformatted code will fail checks.
 
 ### Destructive Operations
 
