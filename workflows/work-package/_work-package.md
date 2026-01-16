@@ -98,7 +98,7 @@ This workflow defines how to plan and implement ONE work package from inception 
    └─ Mark PR ready for review
 
 10. POST-IMPLEMENTATION
-    ├─ Capture session history (private metadata only)
+    ├─ Capture session history (if metadata repo exists)
     ├─ After PR merged: Update status
     └─ Select next work package
 ```
@@ -1644,7 +1644,27 @@ Update WP-COMPLETE.md with final PR number and status.
 
 **⚠️ PRIVATE DATA:** Chat history contains potentially sensitive session data. It must ONLY be stored in the private metadata location specified below. NEVER commit this data to the repository.
 
-**Location:**
+#### Prerequisite Check
+
+**Before capturing history, verify the metadata folder exists and is a valid repository:**
+
+```bash
+# Check if metadata folder exists and is a git repository (submodule or worktree)
+if [ -d ".engineering/agent/metadata" ] && [ -d ".engineering/agent/metadata/.git" -o -f ".engineering/agent/metadata/.git" ]; then
+    echo "✅ Metadata repository found - proceed with history capture"
+else
+    echo "⏭️ Metadata repository not found - skipping history capture"
+fi
+```
+
+**Skip history capture if:**
+- `.engineering/agent/metadata/` folder does not exist
+- `.engineering/agent/metadata/` is not a git submodule or worktree
+
+> **Rationale:** History capture requires a dedicated private repository. Without proper repository setup, there's no safe location to store session data.
+
+#### Location
+
 ```
 .engineering/agent/metadata/projects/<project-name>/<work-package-name>/history/
 ```
