@@ -136,7 +136,7 @@ I didn't find a GitHub or Jira issue associated with this work package.
 
 ### 1.3 Creating a New Issue
 
-📄 **Reference:** Follow the [Issue Creation Guide](../../guides/issue-creation.guide.md) for template, methodology, and rules about problem-focused (not solution-focused) issues.
+📄 **Reference:** Follow the [Issue Creation Guide](../../guides/github-issue.guide.md) for template, methodology, and rules about problem-focused (not solution-focused) issues.
 
 **Issue Creation Process:**
 
@@ -332,7 +332,7 @@ It can be skipped when:
 
 - [ ] Checked for existing GitHub/Jira issue
 - [ ] 🛑 **Asked user if no issue found**
-- [ ] Issue created (if needed) following [Issue Creation Guide](../../guides/issue-creation.guide.md)
+- [ ] Issue created (if needed) following [Issue Creation Guide](../../guides/github-issue.guide.md)
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
 - [ ] Changelog added to `changes/changed/`
@@ -865,7 +865,7 @@ After designing the approach, **STOP and confirm:**
 
 #### 04-assumptions-log.md
 
-📄 **Reference:** Follow the [Assumptions Guide](../../guides/assumptions.guide.md) for assumption categories, review process, and log template.
+📄 **Reference:** Follow the [Assumptions Guide](../../guides/assumptions-review.guide.md) for assumption categories, review process, and log template.
 
 ### 4.6 Sync Feature Branch with Main
 
@@ -903,7 +903,7 @@ The test plan documents how the work package's requirements will be validated. A
 2. Use the **Initial Test Plan Template** (placeholder without source links)
 3. List planned test objectives (implementation details come later)
 
-📄 **Reference:** Follow the [Test Plan Creation Guide](../../guides/test-plan-creation.guide.md) for templates, TDD principles, and guidelines.
+📄 **Reference:** Follow the [Test Plan Creation Guide](../../guides/test-plan.guide.md) for templates, TDD principles, and guidelines.
 
 > **Note:** The test plan will be finalized in Phase 7 (Finalize) after implementation is complete, adding hyperlinks to actual test locations.
 
@@ -1058,7 +1058,7 @@ git branch --show-current
 
 **Preferred approach:** Use the interview-style review, presenting assumptions one at a time with numbered alternatives for the user to choose from.
 
-📄 **Reference:** Follow the [Assumptions Guide](../../guides/assumptions.guide.md) for the interview format, assumption categories, self-review questions, and the log template.
+📄 **Reference:** Follow the [Assumptions Guide](../../guides/assumptions-review.guide.md) for the interview format, assumption categories, self-review questions, and the log template.
 
 ### 5.3 Code Quality Checklist
 
@@ -1195,7 +1195,7 @@ WP: Hybrid Search Implementation (Task 2)
 
 After each task, **STOP and report progress AND assumptions.**
 
-> **Note:** For assumption review, prefer the **interview-style approach** (one assumption at a time with alternatives) described in the [Assumptions Guide](../../guides/assumptions.guide.md). The batch format below is an alternative when assumptions are straightforward.
+> **Note:** For assumption review, prefer the **interview-style approach** (one assumption at a time with alternatives) described in the [Assumptions Guide](../../guides/assumptions-review.guide.md). The batch format below is an alternative when assumptions are straightforward.
 
 ```markdown
 ## ✅ Task N Complete
@@ -1300,7 +1300,7 @@ After each task, **STOP and report progress AND assumptions.**
 - [Any insights for future tasks]
 ```
 
-📄 **Reference:** See the [Assumptions Guide](../../guides/assumptions.guide.md) for the log template.
+📄 **Reference:** See the [Assumptions Guide](../../guides/assumptions-review.guide.md) for the log template.
 
 ### 5.9 Verify Architectural Significance
 
@@ -1395,7 +1395,7 @@ After completing all tasks, **STOP and present the significance assessment:**
 4. Include **Consequences** section (positive, negative, neutral)
 5. Commit with message: `docs(adr): add ADR for [work package name]`
 
-📄 **Reference:** Follow the [ADR Creation Guide](../../guides/adr-creation.guide.md) for full template, architectural significance criteria, and guidelines.
+📄 **Reference:** Follow the [ADR Creation Guide](../../guides/adr.guide.md) for full template, architectural significance criteria, and guidelines.
 
 #### 🛑 ADR Checkpoint
 
@@ -1563,7 +1563,7 @@ If a placeholder test plan was created in Phase 4, update it with implementation
 3. Expand the table with Steps and Expected Result columns
 4. Add verified Running Tests commands
 
-📄 **Reference:** Use the **Final Test Plan Template** from the [Test Plan Creation Guide](../../guides/test-plan-creation.guide.md).
+📄 **Reference:** Use the **Final Test Plan Template** from the [Test Plan Creation Guide](../../guides/test-plan.guide.md).
 
 Commit with the ADR update or separately:
 
@@ -1709,7 +1709,7 @@ Update work package plan status:
 ### Issue Verification & PR Creation (Phase 1)
 - [ ] Checked for existing GitHub/Jira issue
 - [ ] 🛑 **Asked user if no issue found**
-- [ ] Issue created if needed (see [Issue Creation Guide](../../guides/issue-creation.guide.md))
+- [ ] Issue created if needed (see [Issue Creation Guide](../../guides/github-issue.guide.md))
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
 - [ ] Changelog added to `changes/changed/`
@@ -1782,7 +1782,7 @@ Update work package plan status:
 
 | Don't | Why |
 |-------|-----|
-| Skip issue verification | No traceability, unclear requirements, stakeholders can't track (see [Issue Creation Guide](../../guides/issue-creation.guide.md)) |
+| Skip issue verification | No traceability, unclear requirements, stakeholders can't track (see [Issue Creation Guide](../../guides/github-issue.guide.md)) |
 | Prescribe solutions in issues | Issues define problems, not implementations; constrains design options. **Never include "Solution", "Implementation Approach", algorithms, or code locations in issues.** |
 | Skip elicitation without asking user | User should decide if elicitation is needed; assumptions compound into wrong implementation |
 | Skip research without asking user | User should decide if research is needed; may miss patterns, best practices, or baseline analysis |
@@ -1802,9 +1802,9 @@ Update work package plan status:
 | Monolithic commits | Can't track issues, hard to review/revert |
 | Poor commit messages | No context for future maintainers |
 | Skip architectural significance check | Creates unnecessary ADRs for trivial changes or misses ADRs for significant ones |
-| Skip ADR for architecturally significant decisions | Decision rationale lost forever (see [ADR Creation Guide](../../guides/adr-creation.guide.md)) |
+| Skip ADR for architecturally significant decisions | Decision rationale lost forever (see [ADR Creation Guide](../../guides/adr.guide.md)) |
 | Modify historical ADRs | ADRs are immutable historical records; create new ADR if decision changes |
-| Skip test plan | No traceability from docs to tests (see [Test Plan Creation Guide](../../guides/test-plan-creation.guide.md)) |
+| Skip test plan | No traceability from docs to tests (see [Test Plan Creation Guide](../../guides/test-plan.guide.md)) |
 | Skip validation | Broken code gets merged |
 | Multiple WPs at once | Mixed commits, confusing PRs |
 | Skip planning | Scope creep, wasted effort |
