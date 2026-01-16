@@ -34,7 +34,7 @@ Start with [`_workflow.md`](_workflow.md) — the master document that defines a
 | [`implementation-analysis.guide.md`](../../guides/implementation-analysis.guide.md) | Analyzing implementation approach |
 | [`github-issue-creation.guide.md`](../../guides/github-issue-creation.guide.md) | Creating GitHub issues |
 | [`pr-description.guide.md`](../../guides/pr-description.guide.md) | Writing PR descriptions |
-| [`self-review.guide.md`](../../guides/self-review.guide.md) | Pre-merge self-review checklist |
+| [`task-completion-review.guide.md`](../../guides/task-completion-review.guide.md) | Post-task verification checklist |
 | [`assumptions-review.guide.md`](../../guides/assumptions-review.guide.md) | Tracking assumptions during work |
 
 ## Templates

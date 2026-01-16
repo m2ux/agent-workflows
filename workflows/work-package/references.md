@@ -51,7 +51,7 @@ For navigation between workflow documents, see the [Work Package Implementation 
 | [Knowledge Base Research Guide](../../guides/knowledge-base-research.guide.md) | Research methodology |
 | [PR Description Guide](../../guides/pr-description.guide.md) | Pull request documentation |
 | [Requirements Elicitation Guide](../../guides/requirements-elicitation.guide.md) | Requirements gathering |
-| [Self-Review Guide](../../guides/self-review.guide.md) | Pre-submission review |
+| [Task Completion Review Guide](../../guides/task-completion-review.guide.md) | Post-task verification |
 | [Test Plan Creation Guide](../../guides/test-plan.guide.md) | Test planning |
 
 ### Templates

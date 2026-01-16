@@ -427,5 +427,5 @@ N/A
 ## Related Guides
 
 - [Work Package Implementation Workflow](_workflow.md)
-- [Self-Review Guide](self-review.guide.md)
+- [Task Completion Review Guide](task-completion-review.guide.md)
 - [References](references.md) — External sources used in this guide
