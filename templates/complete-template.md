@@ -356,6 +356,6 @@ This guide supports Phase 8 (Finalize) of the [Work Package Implementation Workf
 - [Work Package Implementation Workflow](_workflow.md)
 - [Work Package Plan Template](plan-template.md)
 - [Work Package START-HERE Template](start-here-template.md)
-- [ADR Creation Guide](adr-creation-guide.md)
-- [PR Description Guide](pr-description-guide.md)
+- [ADR Creation Guide](../guides/adr-creation-guide.md)
+- [PR Description Guide](../guides/pr-description-guide.md)
 

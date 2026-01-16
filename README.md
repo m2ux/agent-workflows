@@ -67,20 +67,24 @@ The agent will read the mandatory rules and guide you through the workflow phase
 agent-resources/
 ├── AGENTS.md              # AI agent behavior guidelines (shared)
 ├── deploy.sh              # Engineering branch deployment script
-├── workflows/             # Workflow definitions
-│   └── work-package/      # Work package workflow
-│       ├── _START_HERE.md # Entry point for workflow inclusion
-│       ├── workflow.md    # Main workflow document
-│       ├── *-guide.md     # Step-by-step guides
-│       └── *-template.md  # Templates
-└── <future-resources>/    # Additional resources follow same pattern
+├── guides/                # Step-by-step guides (shared across workflows)
+│   ├── adr-creation-guide.md
+│   ├── assumptions-guide.md
+│   └── ...
+├── templates/             # Reusable templates (shared across workflows)
+│   ├── plan-template.md
+│   ├── complete-template.md
+│   └── ...
+└── workflows/             # Workflow definitions
+    └── work-package/      # Work package workflow
+        ├── _START_HERE.md # Entry point for workflow inclusion
+        ├── workflow.md    # Main workflow document
+        └── references.md  # External references
 ```
 
-Each workflow folder contains:
-- `_START_HERE.md` — Entry point with mandatory rules and getting started instructions
-- `workflow.md` — Master document defining phases and steps
-- `*-guide.md` — Detailed guidance for specific activities
-- `*-template.md` — Reusable templates
+**Guides** (`guides/`) — Detailed guidance for specific activities, shared across workflows
+**Templates** (`templates/`) — Reusable document templates, shared across workflows
+**Workflows** (`workflows/`) — Self-contained workflow definitions with entry points
 
 ## Deployment
 

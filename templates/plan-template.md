@@ -386,7 +386,7 @@ This guide supports Phase 0 (Planning) of the [Work Package Implementation Workf
 - [Work Package Implementation Workflow](_workflow.md)
 - [Work Package START-HERE Template](start-here-template.md)
 - [Work Package README Template](readme-template.md)
-- [Knowledge Base Research Guide](knowledge-base-research-guide.md)
-- [Implementation Analysis Guide](implementation-analysis-guide.md)
-- [ADR Creation Guide](adr-creation-guide.md)
+- [Knowledge Base Research Guide](../guides/knowledge-base-research-guide.md)
+- [Implementation Analysis Guide](../guides/implementation-analysis-guide.md)
+- [ADR Creation Guide](../guides/adr-creation-guide.md)
 
