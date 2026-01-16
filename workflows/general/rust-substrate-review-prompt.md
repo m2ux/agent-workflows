@@ -68,12 +68,12 @@ Before starting a review, determine:
 ```
 .engineering/artifacts/reviews/
 ├── pr471/                              # PR-specific folder
-│   ├── YYYY-MM-DD-module-name-review.md
-│   └── YYYY-MM-DD-task-N-review.md
+│   ├── midnight-pallet-review.md
+│   └── task-3-review.md
 ├── pr472/
 │   └── ...
 └── audits/                             # Standalone audits (not PR-related)
-    └── YYYY-MM-DD-module-name-review.md
+    └── ledger-types-review.md
 ```
 
 **PR reviews:** Create a subfolder named `pr{number}` (e.g., `pr471`) to group all reviews for that PR.
@@ -83,13 +83,13 @@ Before starting a review, determine:
 ### File Naming Convention
 
 ```
-YYYY-MM-DD-{scope-description}-review.md
+{scope-description}-review.md
 ```
 
 **Examples:**
-- `reviews/pr471/2026-01-16-midnight-pallet-review.md`
-- `reviews/pr471/2026-01-16-task-3-review.md`
-- `reviews/audits/2026-01-16-ledger-types-review.md`
+- `reviews/pr471/midnight-pallet-review.md`
+- `reviews/pr471/task-3-review.md`
+- `reviews/audits/ledger-types-review.md`
 
 ### Report Template
 
@@ -567,10 +567,10 @@ When conducting a comprehensive review:
 2. **Create output file:**
    ```
    # For PR-related reviews:
-   .engineering/artifacts/reviews/pr{N}/YYYY-MM-DD-{scope}-review.md
+   .engineering/artifacts/reviews/pr{N}/{scope}-review.md
    
    # For standalone audits:
-   .engineering/artifacts/reviews/audits/YYYY-MM-DD-{scope}-review.md
+   .engineering/artifacts/reviews/audits/{scope}-review.md
    ```
 
 3. **Conduct review** using criteria in this guide
