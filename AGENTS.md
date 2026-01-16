@@ -13,16 +13,16 @@ This repository is deployed as a **submodule work-tree** within a project's `.en
 ```
 .engineering/                  # Gitignored worktree (separate git repo)
 ├── agent/
-│   ├── workflows/             # ← This repo (m2ux/agent-workflows)
+│   ├── resources/             # ← This repo (m2ux/agent-resources)
 │   └── metadata/              # Submodule: m2ux/ai-metadata
 ├── artifacts/                 # Project-specific planning artifacts
 └── scripts/
-    └── update-workflows.sh    # Updates this submodule to a tagged version
+    └── update-resources.sh    # Updates this submodule to a tagged version
 ```
 
-The `.engineering/` folder is **gitignored** by the host project - it exists as a separate git repository for engineering artifacts, not tracked by the main project. Within it, `agent/workflows/` and `agent/metadata/` are **submodule work-trees** pointing to external repositories.
+The `.engineering/` folder is **gitignored** by the host project - it exists as a separate git repository for engineering artifacts, not tracked by the main project. Within it, `agent/resources/` and `agent/metadata/` are **submodule work-trees** pointing to external repositories.
 
-Changes to this file require commits in this repository (`m2ux/agent-workflows`), not in the host project.
+Changes to this file require commits in this repository (`m2ux/agent-resources`), not in the host project.
 
 ## Agent Guardrails
 

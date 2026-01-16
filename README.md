@@ -1,6 +1,6 @@
-# Agent Workflows
+# Agent Resources
 
-Packaged workflows for agentic software engineering. Designed to be included as a version-pinned submodule within an orphan `engineering` branch in your project repository, keeping workflow definitions separate from code history while remaining co-located with the project.
+Packaged workflows and resources for agentic software engineering. Designed to be included as a version-pinned submodule within an orphan `engineering` branch in your project repository, keeping workflow definitions separate from code history while remaining co-located with the project.
 
 The **engineering branch pattern** uses a Git orphan branch to store planning artifacts, ADRs, and agent configuration alongside your code without polluting its commit history. When cloned locally, it appears as a `.engineering/` folder:
 
@@ -15,7 +15,7 @@ my-project/
     │   ├── reviews/           # Code reviews
     │   └── templates/         # Reusable templates
     ├── agent/
-    │   ├── workflows/         # ← This repo (submodule)
+    │   ├── resources/         # ← This repo (submodule)
     │   └── metadata/          # Private metadata (optional)
     └── scripts/               # Update scripts
 ```
@@ -33,7 +33,7 @@ Each workflow is a self-contained, revisioned package that an agent (or human) c
 
 | Workflow | Description |
 |----------|-------------|
-| [`work-package/`](work-package/) | Planning and implementation workflow for features and enhancements |
+| [`work-package/`](workflows/work-package/) | Planning and implementation workflow for features and enhancements |
 
 *More workflows coming soon.*
 
@@ -43,18 +43,18 @@ Each workflow is a self-contained, revisioned package that an agent (or human) c
 
 ```bash
 # Download and run the deployment script
-curl -O https://raw.githubusercontent.com/m2ux/agent-workflows/main/deploy.sh
+curl -O https://raw.githubusercontent.com/m2ux/agent-resources/main/deploy.sh
 ./deploy.sh
 ```
 
-This creates a `.engineering/` folder containing the workflows. See [Deployment](#deployment) for options.
+This creates a `.engineering/` folder containing the resources. See [Deployment](#deployment) for options.
 
 ### 2. Start a Work Package
 
 In your AI assistant chat, add the workflow entry point and describe your task:
 
 ```
-@.engineering/agent/workflows/work-package/_START_HERE.md
+@.engineering/agent/resources/workflows/work-package/_START_HERE.md
 
 I want to implement [describe your feature, bug fix, or enhancement here]
 ```
@@ -64,15 +64,16 @@ The agent will read the mandatory rules and guide you through the workflow phase
 ## Layout
 
 ```
-agent-workflows/
+agent-resources/
 ├── AGENTS.md              # AI agent behavior guidelines (shared)
 ├── deploy.sh              # Engineering branch deployment script
-├── work-package/          # Work package workflow
-│   ├── _START_HERE.md     # Entry point for workflow inclusion
-│   ├── workflow.md        # Main workflow document
-│   ├── *-guide.md         # Step-by-step guides
-│   └── *-template.md      # Templates
-└── <future-workflow>/     # Additional workflows follow same pattern
+├── workflows/             # Workflow definitions
+│   └── work-package/      # Work package workflow
+│       ├── _START_HERE.md # Entry point for workflow inclusion
+│       ├── workflow.md    # Main workflow document
+│       ├── *-guide.md     # Step-by-step guides
+│       └── *-template.md  # Templates
+└── <future-resources>/    # Additional resources follow same pattern
 ```
 
 Each workflow folder contains:
@@ -87,9 +88,9 @@ Deploy an engineering branch to any project:
 
 ```bash
 # Copy deploy script to your project root
-cp /path/to/agent-workflows/deploy.sh ./
+cp /path/to/agent-resources/deploy.sh ./
 # Or download directly:
-curl -O https://raw.githubusercontent.com/m2ux/agent-workflows/main/deploy.sh
+curl -O https://raw.githubusercontent.com/m2ux/agent-resources/main/deploy.sh
 
 # Run it
 ./deploy.sh

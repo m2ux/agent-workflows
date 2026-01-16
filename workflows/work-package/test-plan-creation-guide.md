@@ -42,7 +42,7 @@ Test plans are lightweight documents that accompany ADRs and PRs, providing stru
 
 Before writing test cases, consult the **TDD Concepts Guide** for test design principles and patterns.
 
-📄 **Reference:** [TDD Concepts for Rust](.engineering/agent/workflows/resources/tdd-concepts-rust.md)
+📄 **Reference:** [TDD Concepts for Rust](.engineering/agent/resources/tdd-concepts-rust.md)
 
 ### Key Principles to Apply
 
