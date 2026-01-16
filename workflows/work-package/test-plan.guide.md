@@ -40,9 +40,7 @@ Test plans are lightweight documents that accompany ADRs and PRs, providing stru
 
 ## TDD Principles for Test Design
 
-Before writing test cases, consult the **TDD Concepts Guide** for test design principles and patterns.
-
-📄 **Reference:** [TDD Concepts for Rust](.engineering/agent/resources/tdd-concepts-rust.md)
+Before writing test cases, apply these TDD principles and patterns to ensure comprehensive test coverage.
 
 ### Key Principles to Apply
 

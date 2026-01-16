@@ -37,7 +37,7 @@ Before designing a solution, apply a structured design framework to:
 
 This guide uses the **TRIZICS Software Design** methodology, adapted from systematic innovation principles.
 
-📄 **Full Reference:** [TRIZICS Software Design Quick Reference](.engineering/agent/resources/trizics-software-design-quick-reference.md)
+📄 **Full Reference:** [TRIZICS Software Design Prompt](../general/trizics-software-design-prompt.md)
 
 ### The 5-Step Design Roadmap
 
