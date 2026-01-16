@@ -3,7 +3,7 @@
 
 This workflow defines how to plan and implement ONE work package from inception to merged PR. A **work package** is a discrete unit of work such as a feature, bug-fix, enhancement, refactoring, or any other deliverable change.
 
-**For multiple related work packages:** Use the [High-Level Planning Workflow](high-level-planning-workflow.md) to create a roadmap first.
+**For multiple related work packages:** Use the [Work Packages Workflow](_work-packages.md) to create a roadmap first.
 
 ---
 
@@ -812,7 +812,7 @@ After designing the approach, **STOP and confirm:**
 
 ### 4.5 Work Package Plan Folder
 
-> **Note:** Always use the folder pattern for consistency with [High-Level Planning Workflow](high-level-planning-workflow.md). Even simple work packages benefit from the structured navigation.
+> **Note:** Always use the folder pattern for consistency with [Work Packages Workflow](_work-packages.md). Even simple work packages benefit from the structured navigation.
 
 **Location:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/`
 

@@ -391,7 +391,7 @@ After completing analysis, present findings to the user for confirmation:
 
 ## Integration with Workflow
 
-This guide supports Phase 0 (Planning) of the [Work Package Implementation Workflow](_workflow.md):
+This guide supports Phase 0 (Planning) of the [Work Package Implementation Workflow](_work-package.md):
 
 1. **After KB research confirmed** → Begin implementation analysis
 2. **Complete analysis** → Store in `03-implementation-analysis.md`
@@ -402,7 +402,7 @@ This guide supports Phase 0 (Planning) of the [Work Package Implementation Workf
 
 ## Related Guides
 
-- [Work Package Implementation Workflow](_workflow.md)
+- [Work Package Implementation Workflow](_work-package.md)
 - [Knowledge Base Research Guide](knowledge-base-research.guide.md)
 - [Architecture Review Guide](architecture-review.guide.md)
 - [Test Plan Creation Guide](test-plan.guide.md)

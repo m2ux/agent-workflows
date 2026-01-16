@@ -105,7 +105,7 @@ Creating an ADR before implementation risks documenting decisions that will chan
 
 ### Workflow Integration
 
-ADRs are created in **Phase 5 (Implement Tasks)** of the [Work Package Implementation Workflow](_workflow.md), after all tasks are complete:
+ADRs are created in **Phase 5 (Implement Tasks)** of the [Work Package Implementation Workflow](_work-package.md), after all tasks are complete:
 
 1. Complete all implementation tasks
 2. Validate tests pass and build succeeds
@@ -809,7 +809,7 @@ Before submitting an ADR, verify:
 
 ## Related Guides
 
-- [Work Package Implementation Workflow](_workflow.md)
+- [Work Package Implementation Workflow](_work-package.md)
 - [Test Plan Creation Guide](test-plan.guide.md)
 - [PR Description Guide](pr-description.guide.md)
 - [References](references.md) — External sources used in this guide

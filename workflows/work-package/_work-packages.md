@@ -20,9 +20,9 @@ This workflow defines how to create high-level planning sessions that organize m
 - Quick bug fix (<30 min)
 - Minor refactoring with clear scope
 
-> **Note:** Even single features should use the folder pattern for consistency. The [WP Implementation Workflow](_workflow.md) uses the same folder structure - this ensures all planning artifacts follow a unified pattern.
+> **Note:** Even single features should use the folder pattern for consistency. The [Work Package Workflow](_work-package.md) uses the same folder structure - this ensures all planning artifacts follow a unified pattern.
 
-**Related:** After planning, use the [WP Implementation Workflow](_workflow.md) to implement individual features.
+**Related:** After planning, use the [Work Package Workflow](_work-package.md) to implement individual features.
 
 ---
 
@@ -213,7 +213,7 @@ This planning session integrates:
 1. Read this document (START-HERE.md) for context
 2. Review individual feature plans (03-*, 04-*, 05-*)
 3. Select first feature based on priority
-4. Follow [Feature Implementation Workflow](../prompts/feature-_workflow.md)
+4. Follow [Work Package Workflow](_work-package.md)
 5. Return here after completion to select next feature
 
 ---
@@ -297,7 +297,7 @@ This planning session integrates:
 1. Read [START-HERE.md](START-HERE.md) for full context
 2. Select feature based on priority
 3. Review detailed plan (e.g., `03-feature-plan.md`)
-4. Follow [Feature Implementation Workflow](../prompts/feature-_workflow.md)
+4. Follow [Work Package Workflow](_work-package.md)
 
 ---
 

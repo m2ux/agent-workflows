@@ -2,7 +2,7 @@
 
 **Purpose:** Define the review process performed upon completing each implementation task. This guide covers the verification steps, assumption surfacing, and quality checks that ensure work is ready for user confirmation before proceeding to the next task.
 
-**When to use:** Throughout Phase 5 (Implementation) of the [Work Package Implementation Workflow](_workflow.md), after completing each task.
+**When to use:** Throughout Phase 5 (Implementation) of the [Work Package Implementation Workflow](_work-package.md), after completing each task.
 
 ---
 
@@ -332,5 +332,5 @@ git diff origin/main --name-only
 ## Related Guides
 
 - [Assumptions Guide](assumptions-review.guide.md) — Detailed assumption categories and log template
-- [Work Package Workflow](_workflow.md) — Overall implementation workflow
+- [Work Package Workflow](_work-package.md) — Overall implementation workflow
 - [Architecture Review Guide](architecture-review.guide.md) — Architecture decision records

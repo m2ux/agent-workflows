@@ -8,7 +8,7 @@ This workflow guides agents (and humans) through the complete lifecycle of a wor
 
 ## Entry Point
 
-Start with [`_workflow.md`](_workflow.md) — the master document that defines all phases and orchestrates the guides below.
+Start with [`_work-package.md`](_work-package.md) for single work packages or [`_work-packages.md`](_work-packages.md) for multi-package initiatives.
 
 ## Phases
 
@@ -48,7 +48,7 @@ Start with [`_workflow.md`](_workflow.md) — the master document that defines a
 
 ## Usage
 
-1. Reference `_workflow.md` in your agent's context
+1. Reference `_work-package.md` or `_work-packages.md` in your agent's context
 2. Follow the phases sequentially
 3. Use guides as needed for specific activities
 4. Generate artifacts using templates

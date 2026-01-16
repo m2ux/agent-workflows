@@ -372,7 +372,7 @@ Document blockers and mitigation strategies:
 
 ## Integration with Workflow
 
-This guide supports Phase 0 (Planning) of the [Work Package Implementation Workflow](_workflow.md):
+This guide supports Phase 0 (Planning) of the [Work Package Implementation Workflow](_work-package.md):
 
 1. **After research and analysis** → Create implementation plan
 2. **During planning** → Define tasks and success criteria
@@ -383,7 +383,7 @@ This guide supports Phase 0 (Planning) of the [Work Package Implementation Workf
 
 ## Related Guides
 
-- [Work Package Implementation Workflow](_workflow.md)
+- [Work Package Implementation Workflow](_work-package.md)
 - [Work Package START-HERE](start-here.guide.md)
 - [Work Package README](readme.guide.md)
 - [Knowledge Base Research Guide](knowledge-base-research.guide.md)

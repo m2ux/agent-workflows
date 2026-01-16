@@ -2,7 +2,7 @@
 
 **Purpose:** Define rules for identifying, documenting, and reviewing assumptions during implementation. This guide covers both the review process and the log template.
 
-**When to use:** Throughout Phase 2 (Implementation) of the [Work Package Implementation Workflow](_workflow.md).
+**When to use:** Throughout Phase 2 (Implementation) of the [Work Package Implementation Workflow](_work-package.md).
 
 ---
 
@@ -426,6 +426,6 @@ N/A
 
 ## Related Guides
 
-- [Work Package Implementation Workflow](_workflow.md)
+- [Work Package Implementation Workflow](_work-package.md)
 - [Task Completion Review Guide](task-completion-review.guide.md)
 - [References](references.md) — External sources used in this guide

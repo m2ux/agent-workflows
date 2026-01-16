@@ -21,9 +21,24 @@ This file contains critical guidelines for:
 
 ---
 
+## Choose Your Workflow
+
+Select the appropriate workflow based on the scope of work:
+
+| Scope | Workflow | When to Use |
+|-------|----------|-------------|
+| **Single Work Package** | [_work-package.md](_work-package.md) | A focused task that can be completed in one work package |
+| **Multiple Work Packages** | [_work-packages.md](_work-packages.md) | Complex initiatives requiring multiple coordinated work packages |
+
+**How to decide:**
+- If the request involves a single feature, fix, or enhancement → use **_work-package.md**
+- If the request involves multiple phases, features, or requires high-level planning → use **_work-packages.md**
+
+---
+
 ## Workflow Rules Are Mandatory
 
-The [Work Package Implementation Workflow](workflow.md) defines how to plan and implement work packages from inception to merged PR. **All rules and checkpoints in the workflow are mandatory and must be followed.**
+Both workflows define how to plan and implement work packages from inception to merged PR. **All rules and checkpoints in the workflows are mandatory and must be followed.**
 
 ### Core Workflow Rules
 
@@ -38,8 +53,9 @@ The [Work Package Implementation Workflow](workflow.md) defines how to plan and 
 ## Getting Started
 
 1. **Read [AGENTS.md](../../AGENTS.md)** (`.engineering/agent/resources/AGENTS.md`)
-2. **Read the full [workflow.md](workflow.md)** to understand the complete process
+2. **Select the appropriate workflow** based on scope (single or multiple work packages)
 3. **Follow each phase in sequence**, respecting all checkpoints
 4. **Use the reference guides** linked from each workflow phase for detailed instructions
 
-📄 **Main Workflow:** [workflow.md](workflow.md)
+📄 **Single Work Package:** [_work-package.md](_work-package.md)
+📄 **Multiple Work Packages:** [_work-packages.md](_work-packages.md)

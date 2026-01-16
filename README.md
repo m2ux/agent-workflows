@@ -70,7 +70,8 @@ agent-resources/
 └── workflows/             # Workflow definitions
     └── work-package/      # Work package workflow
         ├── _START_HERE.md # Entry point for workflow inclusion
-        ├── workflow.md    # Main workflow document
+        ├── _work-package.md  # Single work package workflow
+        ├── _work-packages.md # Multi work package workflow
         ├── *.guide.md     # Step-by-step guides
         └── references.md  # External references
 ```
@@ -126,7 +127,7 @@ To add a new workflow:
 
 1. Create a new top-level folder (e.g., `code-review/`)
 2. Add `_START_HERE.md` as the entry point with mandatory rules
-3. Add `workflow.md` as the main workflow document
+3. Add `_work-package.md` (single) or `_work-packages.md` (multi) as main workflow documents
 4. Add supporting guides and templates
 5. Update this README's workflow table
 
