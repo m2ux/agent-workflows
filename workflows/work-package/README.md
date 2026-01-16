@@ -26,16 +26,16 @@ Start with [`_workflow.md`](_workflow.md) — the master document that defines a
 
 | File | Purpose |
 |------|---------|
-| [`requirements-elicitation.guide.md`](../../guides/requirements-elicitation.guide.md) | Structured approach to gathering requirements |
-| [`knowledge-base-research.guide.md`](../../guides/knowledge-base-research.guide.md) | Research using knowledge base tools |
-| [`design-framework.guide.md`](../../guides/design-framework.guide.md) | Design decision framework |
-| [`architecture-review.guide.md`](../../guides/architecture-review.guide.md) | Architecture review and ADR creation |
-| [`test-plan.guide.md`](../../guides/test-plan.guide.md) | Test planning and strategy |
-| [`implementation-analysis.guide.md`](../../guides/implementation-analysis.guide.md) | Analyzing implementation approach |
-| [`github-issue-creation.guide.md`](../../guides/github-issue-creation.guide.md) | Creating GitHub issues |
-| [`pr-description.guide.md`](../../guides/pr-description.guide.md) | Writing PR descriptions |
-| [`task-completion-review.guide.md`](../../guides/task-completion-review.guide.md) | Post-task verification checklist |
-| [`assumptions-review.guide.md`](../../guides/assumptions-review.guide.md) | Tracking assumptions during work |
+| [`requirements-elicitation.guide.md`](requirements-elicitation.guide.md) | Structured approach to gathering requirements |
+| [`knowledge-base-research.guide.md`](knowledge-base-research.guide.md) | Research using knowledge base tools |
+| [`design-framework.guide.md`](design-framework.guide.md) | Design decision framework |
+| [`architecture-review.guide.md`](architecture-review.guide.md) | Architecture review and ADR creation |
+| [`test-plan.guide.md`](test-plan.guide.md) | Test planning and strategy |
+| [`implementation-analysis.guide.md`](implementation-analysis.guide.md) | Analyzing implementation approach |
+| [`github-issue-creation.guide.md`](github-issue-creation.guide.md) | Creating GitHub issues |
+| [`pr-description.guide.md`](pr-description.guide.md) | Writing PR descriptions |
+| [`task-completion-review.guide.md`](task-completion-review.guide.md) | Post-task verification checklist |
+| [`assumptions-review.guide.md`](assumptions-review.guide.md) | Tracking assumptions during work |
 
 ## Templates
 

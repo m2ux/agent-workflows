@@ -386,7 +386,7 @@ This guide supports Phase 0 (Planning) of the [Work Package Implementation Workf
 - [Work Package Implementation Workflow](_workflow.md)
 - [Work Package START-HERE](start-here.guide.md)
 - [Work Package README](readme.guide.md)
-- [Knowledge Base Research Guide](../guides/knowledge-base-research.guide.md)
-- [Implementation Analysis Guide](../guides/implementation-analysis.guide.md)
-- [Architecture Review Guide](../guides/architecture-review.guide.md)
+- [Knowledge Base Research Guide](knowledge-base-research.guide.md)
+- [Implementation Analysis Guide](implementation-analysis.guide.md)
+- [Architecture Review Guide](architecture-review.guide.md)
 

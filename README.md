@@ -67,21 +67,15 @@ The agent will read the mandatory rules and guide you through the workflow phase
 agent-resources/
 ├── AGENTS.md              # AI agent behavior guidelines (shared)
 ├── deploy.sh              # Engineering branch deployment script
-├── guides/                # Step-by-step guides (shared across workflows)
-│   ├── architecture-review.guide.md
-│   ├── assumptions-review.guide.md
-│   └── ...
 └── workflows/             # Workflow definitions
     └── work-package/      # Work package workflow
         ├── _START_HERE.md # Entry point for workflow inclusion
         ├── workflow.md    # Main workflow document
-        ├── plan.guide.md        # Work package guides
-        ├── complete.guide.md
+        ├── *.guide.md     # Step-by-step guides
         └── references.md  # External references
 ```
 
-**Guides** (`guides/`) — Detailed guidance for specific activities, shared across workflows
-**Workflows** (`workflows/`) — Self-contained workflow definitions with workflow-specific guides
+**Workflows** (`workflows/`) — Self-contained workflow definitions with all guides included
 
 ## Deployment
 
