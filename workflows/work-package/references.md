@@ -47,7 +47,7 @@ For navigation between workflow documents, see the [Work Package Implementation 
 | [Architecture Review Guide](../../guides/architecture-review.guide.md) | Architecture Decision Records |
 | [Design Framework Guide](../../guides/design-framework.guide.md) | Design approach structuring |
 | [Implementation Analysis Guide](../../guides/implementation-analysis.guide.md) | Codebase analysis |
-| [Issue Creation Guide](../../guides/github-issue.guide.md) | Problem-focused issue creation |
+| [Issue Creation Guide](../../guides/github-issue-creation.guide.md) | Problem-focused issue creation |
 | [Knowledge Base Research Guide](../../guides/knowledge-base-research.guide.md) | Research methodology |
 | [PR Description Guide](../../guides/pr-description.guide.md) | Pull request documentation |
 | [Requirements Elicitation Guide](../../guides/requirements-elicitation.guide.md) | Requirements gathering |

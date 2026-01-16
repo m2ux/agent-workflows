@@ -136,7 +136,7 @@ I didn't find a GitHub or Jira issue associated with this work package.
 
 ### 1.3 Creating a New Issue
 
-📄 **Reference:** Follow the [Issue Creation Guide](../../guides/github-issue.guide.md) for template, methodology, and rules about problem-focused (not solution-focused) issues.
+📄 **Reference:** Follow the [Issue Creation Guide](../../guides/github-issue-creation.guide.md) for template, methodology, and rules about problem-focused (not solution-focused) issues.
 
 **Issue Creation Process:**
 
@@ -332,7 +332,7 @@ It can be skipped when:
 
 - [ ] Checked for existing GitHub/Jira issue
 - [ ] 🛑 **Asked user if no issue found**
-- [ ] Issue created (if needed) following [Issue Creation Guide](../../guides/github-issue.guide.md)
+- [ ] Issue created (if needed) following [Issue Creation Guide](../../guides/github-issue-creation.guide.md)
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
 - [ ] Changelog added to `changes/changed/`
@@ -1709,7 +1709,7 @@ Update work package plan status:
 ### Issue Verification & PR Creation (Phase 1)
 - [ ] Checked for existing GitHub/Jira issue
 - [ ] 🛑 **Asked user if no issue found**
-- [ ] Issue created if needed (see [Issue Creation Guide](../../guides/github-issue.guide.md))
+- [ ] Issue created if needed (see [Issue Creation Guide](../../guides/github-issue-creation.guide.md))
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
 - [ ] Changelog added to `changes/changed/`
@@ -1782,7 +1782,7 @@ Update work package plan status:
 
 | Don't | Why |
 |-------|-----|
-| Skip issue verification | No traceability, unclear requirements, stakeholders can't track (see [Issue Creation Guide](../../guides/github-issue.guide.md)) |
+| Skip issue verification | No traceability, unclear requirements, stakeholders can't track (see [Issue Creation Guide](../../guides/github-issue-creation.guide.md)) |
 | Prescribe solutions in issues | Issues define problems, not implementations; constrains design options. **Never include "Solution", "Implementation Approach", algorithms, or code locations in issues.** |
 | Skip elicitation without asking user | User should decide if elicitation is needed; assumptions compound into wrong implementation |
 | Skip research without asking user | User should decide if research is needed; may miss patterns, best practices, or baseline analysis |

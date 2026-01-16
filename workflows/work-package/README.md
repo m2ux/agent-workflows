@@ -32,7 +32,7 @@ Start with [`_workflow.md`](_workflow.md) — the master document that defines a
 | [`architecture-review.guide.md`](../../guides/architecture-review.guide.md) | Architecture review and ADR creation |
 | [`test-plan.guide.md`](../../guides/test-plan.guide.md) | Test planning and strategy |
 | [`implementation-analysis.guide.md`](../../guides/implementation-analysis.guide.md) | Analyzing implementation approach |
-| [`github-issue.guide.md`](../../guides/github-issue.guide.md) | Creating GitHub issues |
+| [`github-issue-creation.guide.md`](../../guides/github-issue-creation.guide.md) | Creating GitHub issues |
 | [`pr-description.guide.md`](../../guides/pr-description.guide.md) | Writing PR descriptions |
 | [`self-review.guide.md`](../../guides/self-review.guide.md) | Pre-merge self-review checklist |
 | [`assumptions-review.guide.md`](../../guides/assumptions-review.guide.md) | Tracking assumptions during work |
