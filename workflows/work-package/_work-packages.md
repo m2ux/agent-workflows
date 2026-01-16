@@ -1,6 +1,6 @@
 # Work Packages Workflow
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Last Updated:** January 2026  
 **Purpose:** Organize multiple related work packages into an actionable roadmap
 
@@ -19,6 +19,328 @@ This workflow defines how to plan and coordinate **multiple work packages** that
 **For single work packages:** Use the [Work Package Workflow](_work-package.md) directly.
 
 > **Key Principle:** This workflow handles **coordination and planning**. Individual work packages are implemented using the [Work Package Workflow](_work-package.md).
+
+---
+
+## Workflow
+
+### Rules
+
+- **Agents must NOT proceed past checkpoints without user confirmation**
+- **Ask, don't assume** - Clarify scope and priorities before planning
+- **Summarize, then proceed** - Present findings before asking to continue
+- **User controls priorities** - Never assume priority order without confirmation
+- **Explicit approval** - Get clear "yes" or "proceed" before creating documents
+
+### Overview
+
+```
+1. SCOPE ASSESSMENT (5-10m)
+   ├─ Confirm this is a multi-work-package initiative
+   ├─ Identify the work packages to be planned
+   └─ 🛑 CHECKPOINT: "I've identified N work packages. Proceed with planning?"
+
+2. PLANNING FOLDER SETUP (5-10m)
+   ├─ Create planning folder (.engineering/artifacts/planning/YYYY-MM-DD-name/)
+   ├─ Create START-HERE.md skeleton
+   ├─ Create README.md skeleton
+   └─ 🛑 CHECKPOINT: "Planning folder created. Proceed with analysis?"
+
+3. ANALYSIS (20-45m) [If applicable]
+   ├─ Completion Analysis (if continuing previous work)
+   │   ├─ Review what was completed
+   │   ├─ Identify remaining work
+   │   └─ Document in 01-COMPLETION-ANALYSIS.md
+   ├─ Context Analysis (if new initiative)
+   │   ├─ Research codebase patterns
+   │   ├─ Identify architectural considerations
+   │   └─ Document in 02-CONTEXT-ANALYSIS.md
+   └─ 🛑 CHECKPOINT: "Analysis complete. Does this context look correct?"
+
+4. WORK PACKAGE PLANNING (15-30m per WP)
+   ├─ For each work package:
+   │   ├─ Define scope (in/out)
+   │   ├─ Identify dependencies
+   │   ├─ Estimate effort
+   │   ├─ Define success criteria
+   │   └─ Create NN-feature-plan.md
+   └─ 🛑 CHECKPOINT: "Work package plans created. Ready for prioritization?"
+
+5. PRIORITIZATION (10-15m)
+   ├─ Propose priority order based on:
+   │   ├─ Dependencies (what blocks what)
+   │   ├─ Business value (impact)
+   │   ├─ Risk (technical uncertainty)
+   │   └─ Effort (quick wins vs large efforts)
+   ├─ Create dependency graph
+   └─ 🛑 CHECKPOINT: "Here's the proposed priority order. Adjust as needed?"
+
+6. FINALIZE ROADMAP (10-15m)
+   ├─ Update START-HERE.md with final content
+   ├─ Update README.md with navigation
+   ├─ Add timeline estimates
+   ├─ Document overall success criteria
+   └─ 🛑 CHECKPOINT: "Roadmap complete. Ready to begin implementation?"
+
+7. IMPLEMENTATION (ongoing)
+   ├─ Select first work package by priority
+   ├─ Follow [Work Package Workflow](_work-package.md)
+   ├─ After completion, return here
+   ├─ Update roadmap status
+   └─ Select next work package
+```
+
+---
+
+## Phase 1: Scope Assessment
+
+Confirm this initiative requires multi-work-package planning.
+
+### 1.1 Identify Work Packages
+
+**Questions to answer:**
+- What are the distinct features/capabilities to deliver?
+- Are they related (shared context, dependencies)?
+- Would they benefit from coordinated planning?
+
+### 1.2 🛑 Scope Assessment Checkpoint
+
+```markdown
+## 📋 Scope Assessment
+
+I've identified **N work packages** for this initiative:
+
+1. **[Work Package 1]** - [Brief description]
+2. **[Work Package 2]** - [Brief description]
+3. **[Work Package 3]** - [Brief description]
+
+**Rationale for grouping:**
+- [Why these belong together]
+
+**Estimated total effort:** X-Y hours agentic + Z hours review
+
+---
+**Proceed with multi-work-package planning?**
+```
+
+---
+
+## Phase 2: Planning Folder Setup
+
+Create the structured folder for planning artifacts.
+
+### 2.1 Create Folder Structure
+
+```bash
+mkdir -p .engineering/artifacts/planning/YYYY-MM-DD-initiative-name
+```
+
+### 2.2 Create Skeleton Documents
+
+Create initial START-HERE.md and README.md with placeholder content to be filled in during subsequent phases.
+
+### 2.3 🛑 Folder Setup Checkpoint
+
+```markdown
+## 📁 Planning Folder Created
+
+**Location:** `.engineering/artifacts/planning/YYYY-MM-DD-name/`
+
+**Created:**
+- [ ] START-HERE.md (skeleton)
+- [ ] README.md (skeleton)
+
+---
+**Proceed with analysis phase?**
+```
+
+---
+
+## Phase 3: Analysis
+
+Gather context needed for informed planning.
+
+### 3.1 Completion Analysis (if continuing work)
+
+If this roadmap continues previous work, document:
+- What was completed (with PR/ADR links)
+- What remains from previous plans
+- Lessons learned
+
+📄 **Output:** `01-COMPLETION-ANALYSIS.md`
+
+### 3.2 Context Analysis (for new initiatives)
+
+Research and document:
+- Relevant codebase patterns
+- Architectural considerations
+- External constraints or dependencies
+
+📄 **Output:** `02-CONTEXT-ANALYSIS.md`
+
+### 3.3 🛑 Analysis Checkpoint
+
+```markdown
+## 📊 Analysis Summary
+
+### Key Findings
+- [Finding 1]
+- [Finding 2]
+
+### Implications for Planning
+- [How this affects work package scope/approach]
+
+### Questions Resolved
+- [Question 1]: [Answer]
+
+### Open Questions
+- [Question needing user input]
+
+---
+**Does this analysis look correct? Any additional context needed?**
+```
+
+---
+
+## Phase 4: Work Package Planning
+
+Create detailed plan for each work package.
+
+### 4.1 For Each Work Package
+
+1. **Define scope** - What's in, what's out
+2. **Identify dependencies** - What blocks this, what does this enable
+3. **Estimate effort** - Agentic time + review time
+4. **Define success criteria** - Measurable outcomes
+5. **Create plan document** - Using template below
+
+📄 **Output:** `NN-feature-plan.md` for each work package
+
+### 4.2 🛑 Work Package Plans Checkpoint
+
+```markdown
+## 📋 Work Package Plans Created
+
+| # | Work Package | Effort | Dependencies |
+|---|--------------|--------|--------------|
+| 03 | [Feature A] | X-Yh | None |
+| 04 | [Feature B] | X-Yh | Depends on 03 |
+| 05 | [Feature C] | X-Yh | Depends on 03 |
+
+**Total planned:** N work packages
+
+---
+**Ready to prioritize?**
+```
+
+---
+
+## Phase 5: Prioritization
+
+Establish implementation order.
+
+### 5.1 Prioritization Factors
+
+Consider:
+- **Dependencies** - What must come first?
+- **Business value** - What has highest impact?
+- **Risk** - What has technical uncertainty?
+- **Quick wins** - What can build momentum?
+
+### 5.2 🛑 Prioritization Checkpoint
+
+```markdown
+## 🎯 Proposed Priority Order
+
+| Priority | Phase | Work Package | Effort | Rationale |
+|----------|-------|--------------|--------|-----------|
+| 🔴 HIGH | 03 | [Feature A] | X-Yh | [Why first] |
+| 🔴 HIGH | 04 | [Feature B] | X-Yh | [Why high] |
+| 🟠 MEDIUM | 05 | [Feature C] | X-Yh | [Why medium] |
+| 🟡 LOW | 06 | [Feature D] | X-Yh | [Why lower] |
+
+**Dependency Graph:**
+```
+03 ──┬──► 04
+     │
+     └──► 05 ──► 06
+```
+
+---
+**Adjust priorities as needed. Confirm when ready to finalize.**
+```
+
+---
+
+## Phase 6: Finalize Roadmap
+
+Complete all planning documents.
+
+### 6.1 Update START-HERE.md
+
+Fill in:
+- Executive summary
+- Progress summary (if applicable)
+- Feature list with priorities
+- Timeline
+- Success criteria
+- Navigation
+
+### 6.2 Update README.md
+
+Fill in:
+- Quick overview
+- Document index with status
+- Priority table
+- Getting started section
+
+### 6.3 🛑 Roadmap Complete Checkpoint
+
+```markdown
+## ✅ Roadmap Complete
+
+**Planning folder:** `.engineering/artifacts/planning/YYYY-MM-DD-name/`
+
+**Documents:**
+- ✅ START-HERE.md - Executive summary
+- ✅ README.md - Navigation
+- ✅ 01-COMPLETION-ANALYSIS.md - Context
+- ✅ 03-feature-plan.md - Phase 3
+- ✅ 04-feature-plan.md - Phase 4
+- ✅ 05-feature-plan.md - Phase 5
+
+**Timeline:**
+- Week 1: Phases 3-4 (X-Yh)
+- Week 2: Phase 5 (X-Yh)
+
+**Total:** X-Y hours agentic + Z hours review
+
+---
+**Ready to begin implementation with Phase 3?**
+```
+
+---
+
+## Phase 7: Implementation
+
+Execute work packages in priority order.
+
+### 7.1 Implementation Loop
+
+For each work package:
+
+1. **Select** highest-priority work package not yet complete
+2. **Review** the work package plan (NN-feature-plan.md)
+3. **Implement** using [Work Package Workflow](_work-package.md)
+4. **Complete** and update roadmap status
+5. **Return** here to select next work package
+
+### 7.2 After Each Work Package
+
+Update roadmap documents:
+- Mark completed work package in README.md
+- Update progress in START-HERE.md
+- Create FEATURE-COMPLETE.md if needed
 
 ---
 
@@ -587,23 +909,8 @@ Features implemented one at a time following priority, with commits after each t
 
 ## Version History
 
+- **v1.2** (2026-01): Added structured workflow with rules and checkpoints
 - **v1.1** (2026-01): Refactored to reference _work-package.md instead of duplicating implementation details
 - **v1.0** (2025-11-24): Initial version split from combined workflow
 
 **Related:** [Work Package Workflow](_work-package.md) for implementing individual work packages
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
