@@ -18,6 +18,101 @@ Elicitation is a dialogue, not a checklist. The goal is to:
 - **Establish** clear scope boundaries to prevent scope creep
 - **Define** measurable success criteria
 
+### Sequential Conversation Approach
+
+Use a **sequential, conversational approach** to explore requirements. Ask **one question at a time**, wait for the user's response, and give them the option to skip.
+
+**Key principles:**
+- **One question per turn** - Never present multiple questions in a single message
+- **Skip option always available** - User can say "skip" to move to the next question
+- **Capture answers incrementally** - Build understanding as you go
+- **Adapt based on responses** - Skip irrelevant follow-ups, probe deeper when needed
+
+**Elicitation flow:**
+
+```
+┌─────────────────────────────────────┐
+│ For each question category:         │
+│                                     │
+│   1. Ask ONE question               │
+│   2. Wait for response              │
+│   3. User answers OR says "skip"    │
+│   4. Record answer (if given)       │
+│   5. Move to next question          │
+│                                     │
+│ After all categories:               │
+│   🛑 CHECKPOINT: Requirements       │
+└─────────────────────────────────────┘
+```
+
+**Question flow by domain:**
+
+```
+Problem Exploration (1-4 questions)
+        │
+        ▼
+Stakeholders & Context (1-4 questions)
+        │
+        ▼
+Scope Boundaries (1-4 questions)
+        │
+        ▼
+Success Criteria (1-4 questions)
+        │
+        ▼
+🛑 CHECKPOINT: Summarize & Confirm
+```
+
+### Question Presentation Format
+
+Present each question using this format:
+
+```markdown
+## 📋 [Category Name] (Question N of M)
+
+[Question text]
+
+---
+**Options:** Answer the question, or type **"skip"** to move on.
+```
+
+### Example Elicitation Turn
+
+**Agent presents:**
+
+```markdown
+## 📋 Problem Exploration (Question 1 of 4)
+
+What problem are we trying to solve?
+
+---
+**Options:** Answer the question, or type **"skip"** to move on.
+```
+
+**User responds:** "Planning docs are lost when I switch machines."
+
+**Agent records answer, then presents next question:**
+
+```markdown
+## 📋 Problem Exploration (Question 2 of 4)
+
+What's not working well today?
+
+---
+**Options:** Answer the question, or type **"skip"** to move on.
+```
+
+**User responds:** "skip"
+
+**Agent moves to next question without recording an answer.**
+
+### Adaptive Questioning
+
+- **If user provides comprehensive answer**: Skip related follow-up questions in that category
+- **If user's answer raises new concerns**: Add a clarifying question before moving on
+- **If user says "skip all [category]"**: Move to the next category entirely
+- **If user says "done with questions"**: Proceed directly to the requirements checkpoint
+
 ### The Five Elicitation Domains
 
 ```

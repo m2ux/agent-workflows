@@ -352,195 +352,26 @@ It can be skipped when:
 
 **Discover and clarify what the work package should accomplish through structured conversation.** This phase ensures requirements are explicitly captured before planning the approach.
 
-### 2.1 When to Perform Elicitation
+> **Note:** The user decides whether elicitation is needed at the Phase 1.8 checkpoint. If skipping, proceed directly to Phase 3 (Implementation Analysis). The issue from Phase 1 serves as the requirements source.
 
-**The user decides whether requirements elicitation is needed** at the Phase 1.8 checkpoint. This decision was made after creating the PR.
+### 2.1 Elicitation Process
 
-> **If skipping:** Proceed directly to Phase 3 (Research). The issue from Phase 1 serves as the requirements source.
+📄 **Reference:** Follow the [Requirements Elicitation Guide](requirements-elicitation.guide.md) for the full methodology, question bank, and templates.
 
-### 2.2 Elicitation Process
+**Process overview:**
+1. Explore problem through sequential conversation (one question at a time)
+2. Identify stakeholders and context
+3. Define scope boundaries (in/out lists)
+4. Establish success criteria
+5. Confirm with user at checkpoint
 
-Use a **sequential, conversational approach** to explore requirements. Ask **one question at a time**, wait for the user's response, and give them the option to skip.
+**Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/00-requirements-elicitation.md`
 
-**Key principles:**
-- **One question per turn** - Never present multiple questions in a single message
-- **Skip option always available** - User can say "skip" to move to the next question
-- **Capture answers incrementally** - Build understanding as you go
-- **Adapt based on responses** - Skip irrelevant follow-ups, probe deeper when needed
+### 2.2 🛑 Requirements Elicitation Checkpoint
 
-```
-┌─────────────────────────────────────┐
-│ For each question category:         │
-│                                     │
-│   1. Ask ONE question               │
-│   2. Wait for response              │
-│   3. User answers OR says "skip"    │
-│   4. Record answer (if given)       │
-│   5. Move to next question          │
-│                                     │
-│ After all categories:               │
-│   🛑 CHECKPOINT: Requirements       │
-└─────────────────────────────────────┘
-```
+After exploring requirements, **STOP and confirm with user** using the checkpoint template from the guide.
 
-**Question flow:**
-
-```
-Problem Exploration (1-4 questions)
-        │
-        ▼
-Stakeholders & Context (1-4 questions)
-        │
-        ▼
-Scope Boundaries (1-4 questions)
-        │
-        ▼
-Success Criteria (1-4 questions)
-        │
-        ▼
-🛑 CHECKPOINT: Summarize & Confirm
-```
-
-### 2.3 Elicitation Questions
-
-Ask questions **one at a time** from each category. Always include the skip option.
-
-**Question format:**
-
-```markdown
-## 📋 [Category Name] (Question N of M)
-
-[Question text]
-
----
-**Options:** Answer the question, or type **"skip"** to move on.
-```
-
-#### Problem Exploration
-
-Ask these sequentially (stop when you have sufficient understanding):
-
-1. "What problem are we trying to solve?"
-2. "What's not working well today?"
-3. "What would happen if we didn't address this?"
-4. "Have you tried any workarounds?"
-
-#### Stakeholders & Context
-
-Ask these sequentially:
-
-1. "Who will use this feature or be affected by this change?"
-2. "Are there different user types with different needs?"
-3. "What systems or components does this interact with?"
-4. "Are there any dependencies on external services or tools?"
-
-#### Scope Boundaries
-
-Ask these sequentially:
-
-1. "What should definitely be included in this work?"
-2. "What should explicitly NOT be included?"
-3. "Are there any constraints (time, technology, resources)?"
-4. "What's the minimum viable version?"
-
-#### Success Criteria
-
-Ask these sequentially:
-
-1. "How will you know this is working correctly?"
-2. "What would a successful outcome look like?"
-3. "Are there any performance or quality targets?"
-4. "What would make this a failure?"
-
-### 2.3.1 Example Elicitation Turn
-
-**Agent presents:**
-
-```markdown
-## 📋 Problem Exploration (Question 1 of 4)
-
-What problem are we trying to solve?
-
----
-**Options:** Answer the question, or type **"skip"** to move on.
-```
-
-**User responds:** "Planning docs are lost when I switch machines."
-
-**Agent records answer, then presents next question:**
-
-```markdown
-## 📋 Problem Exploration (Question 2 of 4)
-
-What's not working well today?
-
----
-**Options:** Answer the question, or type **"skip"** to move on.
-```
-
-**User responds:** "skip"
-
-**Agent moves to next question without recording an answer.**
-
-### 2.3.2 Adaptive Questioning
-
-- **If user provides comprehensive answer**: Skip related follow-up questions in that category
-- **If user's answer raises new concerns**: Add a clarifying question before moving on
-- **If user says "skip all [category]"**: Move to the next category entirely
-- **If user says "done with questions"**: Proceed directly to the requirements checkpoint
-
-### 2.4 🛑 Requirements Elicitation Checkpoint
-
-After exploring requirements, **STOP and confirm with user:**
-
-```markdown
-## 📋 Elicited Requirements
-
-**Problem Statement:** [One sentence describing the core problem]
-
-**Goal:** [What success looks like]
-
-**Stakeholders:**
-- [Primary user type] - [Their need]
-- [Secondary user type] - [Their need]
-
-**Scope:**
-- ✅ In scope:
-  - [Item 1]
-  - [Item 2]
-- ❌ Out of scope:
-  - [Item 1]
-  - [Item 2]
-
-**Success Criteria:**
-- [ ] [Criterion 1]
-- [ ] [Criterion 2]
-
-**Constraints:**
-- [Any limitations or dependencies]
-
-**Open Questions:**
-1. [Any remaining uncertainties]
-
----
-**Do these requirements capture what you need?**
-```
-
-### 2.5 Elicitation Output
-
-**Create:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/00-requirements-elicitation.md`
-
-📄 **Reference:** Follow the [Requirements Elicitation Guide](requirements-elicitation.guide.md) for the full template and methodology.
-
-The elicitation document captures:
-- Problem statement and goal
-- Stakeholders and context
-- Scope boundaries (in/out lists)
-- Success criteria
-- Constraints and assumptions
-- Open questions (resolved before proceeding)
-
-### 2.6 Requirements Elicitation Checklist
+### 2.3 Requirements Elicitation Checklist
 
 - [ ] User confirmed elicitation is needed (Phase 1.8 checkpoint)
 - [ ] Problem explored through conversation
