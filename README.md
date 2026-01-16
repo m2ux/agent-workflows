@@ -41,6 +41,7 @@ Each workflow is a self-contained, revisioned package that an agent (or human) c
 
 ### 1. Deploy to Your Project
 
+git push
 From the root of your target project:
 
 ```bash
