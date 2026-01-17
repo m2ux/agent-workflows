@@ -85,10 +85,8 @@ This workflow defines how to plan and implement ONE work package from inception 
    └─ Performance validation
 
 8. STRATEGIC REVIEW (15-30m)
-   ├─ Audit for speculative/unnecessary changes
-   ├─ Compare against baseline branch
-   ├─ Revert changes that don't support the solution
-   └─ 🛑 CHECKPOINT: "Are all changes minimal and necessary?"
+   ├─ Complete review per Strategic Review Guide
+   └─ 🛑 CHECKPOINT: "Review findings confirmed?"
 
 9. FINALIZE (15-30m)
    ├─ Update ADR status to Accepted (if ADR exists)
@@ -1529,84 +1527,18 @@ pytest tests/e2e            # E2E tests
 
 ## Phase 8: Strategic Review
 
-**Audit the implementation for speculative changes that are no longer required.** During investigation and debugging, it's common to add exploratory code, infrastructure changes, or fallback mechanisms that become unnecessary once the root cause is understood.
+**Review the implementation to ensure changes are minimal and focused.** This phase validates that the final PR contains only the changes required for the solution.
 
-📄 **Reference:** Follow the [Strategic Review Guide](strategic-review.guide.md) for the full checklist, common patterns, and checkpoint template.
+📄 **Reference:** Follow the [Strategic Review Guide](strategic-review.guide.md) for the full methodology, checklist, and checkpoint template.
 
-### 8.1 Speculative Changes Audit
+### 8.1 🛑 Strategic Review Checkpoint
 
-**Key questions to answer:**
+After completing the review, **present findings to user** using the checkpoint template from the guide.
 
-| Category | Question |
-|----------|----------|
-| **Files** | Is every changed file necessary for the solution? |
-| **Code** | Is every added line of code required? |
-| **Infrastructure** | Are CI/CD, build, or config changes minimal and necessary? |
-| **Dependencies** | Are all dependency changes required? |
-| **Debugging artifacts** | Has all debug/diagnostic code been removed? |
+### 8.2 Strategic Review Checklist
 
-### 8.2 Compare Against Baseline
-
-**List all changes and verify each is necessary:**
-
-```bash
-# List all files changed in this branch
-git diff --name-only <base-branch> HEAD
-
-# Review each file's changes
-git diff <base-branch> HEAD -- <file>
-```
-
-**For each changed file, ask:** Is this change directly required for the solution, or was it added during investigation/debugging?
-
-### 8.3 Revert Unnecessary Changes
-
-**Remove speculative changes that don't support the final solution:**
-
-```bash
-# Revert a file to match base branch
-git checkout <base-branch> -- <file>
-
-# Stage reverted changes
-git add <reverted-files>
-```
-
-### 8.4 🛑 Strategic Review Checkpoint
-
-After completing the review, **present findings to user:**
-
-```markdown
-## 🔍 Strategic Review Complete
-
-**Baseline Comparison:** Compared against `<base-branch>`
-
-### Changes Summary
-
-| File | Status | Rationale |
-|------|--------|-----------|
-| `path/to/file1` | ✅ Required | [Why needed] |
-| `path/to/file2` | ⏪ Reverted | [Was speculative] |
-
-### Speculative Changes Removed
-
-- [What was removed and why]
-
-### Verification
-
-- [ ] All remaining changes directly support the solution
-- [ ] No debugging or diagnostic code remains
-- [ ] Infrastructure changes are minimal and necessary
-
----
-**Does this accurately capture the required changes?**
-```
-
-### 8.5 Strategic Review Checklist
-
-- [ ] All changed files audited against baseline
-- [ ] Speculative/debugging changes identified
-- [ ] Unnecessary changes reverted
-- [ ] 🛑 **Strategic review confirmed with user**
+- [ ] Strategic review completed per guide
+- [ ] 🛑 **Review findings confirmed with user**
 
 ---
 
@@ -1943,10 +1875,8 @@ Update work package plan status:
 - [ ] ADR created (if architecturally significant; status: Accepted) 🛑
 
 ### Strategic Review (Phase 8)
-- [ ] All changed files audited against baseline
-- [ ] Speculative/debugging changes identified
-- [ ] Unnecessary changes reverted
-- [ ] 🛑 **Strategic review confirmed with user**
+- [ ] Strategic review completed per guide
+- [ ] 🛑 **Review findings confirmed with user**
 
 ### Finalize (Phase 9)
 - [ ] ADR verified (if exists)
