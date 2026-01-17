@@ -38,74 +38,48 @@ This workflow defines how to plan and implement ONE work package from inception 
    └─ Create 00-requirements-elicitation.md
 
 3. IMPLEMENTATION ANALYSIS (10-20m) [Always]
-   ├─ Analyze current implementation (effectiveness, gaps, metrics)
-   ├─ Establish baseline metrics with evidence
-   ├─ Identify opportunities for improvement
+   ├─ Complete analysis per Implementation Analysis Guide
    ├─ Create 01-implementation-analysis.md
    └─ 🛑 CHECKPOINT: "Would you like to perform research?"
 
 4. RESEARCH (20-45m) [If requested]
-   ├─ Research knowledge base (concept-rag MCP)
-   ├─ 🛑 CHECKPOINT: "Do these insights align with your expectations?"
-   ├─ Web research (best practices, patterns, libraries)
-   └─ 🛑 CHECKPOINT: "Are these external resources relevant?"
+   ├─ Complete research per Knowledge Base Research Guide
+   ├─ 🛑 CHECKPOINT: "Knowledge insights confirmed?"
+   └─ 🛑 CHECKPOINT: "Web research findings confirmed?"
 
 5. PLAN & PREPARE (20-45m)
-   ├─ Apply design framework
-   ├─ Design approach (informed by analysis and research)
-   ├─ 🛑 CHECKPOINT: "Does this approach look right? Any concerns?"
-   ├─ Define tasks and estimates
-   ├─ Create work package plan document
-   ├─ Sync feature branch with main
-   ├─ 🛑 VERIFY: On feature branch, NOT main/master
-   ├─ Create test plan (RECOMMENDED)
-   ├─ Update PR description with plan summary
-   ├─ 🛑 CHECKPOINT: "Ready to begin implementation?"
-   └─ Create TODO list
+   ├─ Complete planning per guides (design framework, plan, test plan)
+   ├─ 🛑 CHECKPOINT: "Approach confirmed?"
+   ├─ Prepare for implementation (sync branch, PR, TODOs)
+   └─ 🛑 CHECKPOINT: "Ready to implement?"
 
 6. IMPLEMENT TASKS (varies)
    ├─ 🛑 VERIFY: On feature branch before any code changes
-   ├─ Create 05-assumptions-log.md (before Task 1)
-   ├─ Task N.1: Code + Test + Commit
-   ├─ Review assumptions made during implementation
-   ├─ 🛑 CHECKPOINT: "Task N complete. Review assumptions—confirm or correct?"
-   ├─ Update 05-assumptions-log.md with outcomes
-   ├─ Task N.2: Code + Test + Commit
-   ├─ ...
-   ├─ Code review (language-specific, after all tasks)
-   ├─ 🛑 CHECKPOINT: "Review findings—address issues?"
-   ├─ Verify architectural significance
-   ├─ 🛑 CHECKPOINT: "Is this architecturally significant? Create ADR?"
-   ├─ Create ADR (if architecturally significant)
-   └─ 🛑 CHECKPOINT: "ADR captures final architecture decisions?"
+   ├─ For each task: implement → test → commit → assumptions
+   ├─ 🛑 CHECKPOINT: "Task N complete. Assumptions confirmed?"
+   ├─ After all tasks: code review per guide
+   ├─ 🛑 CHECKPOINT: "Review findings confirmed?"
+   ├─ Architectural significance check per guide
+   ├─ 🛑 CHECKPOINT: "Significance assessment confirmed?"
+   └─ ADR (if significant) 🛑 "ADR confirmed?"
 
 7. VALIDATE (30-60m)
-   ├─ Full test suite
-   ├─ Build verification
-   └─ Performance validation
+   └─ All tests pass, build succeeds (per Test Plan Guide)
 
 8. STRATEGIC REVIEW (15-30m)
    ├─ Complete review per Strategic Review Guide
    └─ 🛑 CHECKPOINT: "Review findings confirmed?"
 
 9. FINALIZE (15-30m)
-   ├─ Update ADR status to Accepted (if ADR exists)
-   ├─ Finalize test plan with source links
-   ├─ Create WP-COMPLETE.md
-   ├─ Inline documentation complete
-   └─ 🛑 CHECKPOINT: "Does the PR description look correct?"
+   └─ Complete finalization tasks per guides (ADR, test plan, COMPLETE.md)
 
 10. UPDATE PR (10-15m)
-    ├─ Push all changes
-    ├─ Update PR description
-    ├─ 🛑 CHECKPOINT: "Ready to mark PR as ready for review?"
+    ├─ Update PR per PR Description Guide
+    ├─ 🛑 CHECKPOINT: "PR description confirmed?"
     └─ Mark PR ready for review
 
 11. POST-IMPLEMENTATION
-    ├─ Capture session history (if metadata repo exists)
-    ├─ Workflow retrospective → 06-workflow-retrospective.md
-    ├─ After PR merged: Update status
-    └─ Select next work package
+    └─ Complete post-implementation tasks per Workflow Retrospective Guide
 ```
 
 ## Phase 1: Issue Verification & PR Creation
@@ -431,493 +405,106 @@ After exploring requirements, **STOP and confirm with user** using the checkpoin
 
 > **Note:** If requirements were elicited in Phase 2, use them as context for analysis. If elicitation was skipped, use the issue from Phase 1 as context.
 
-### 3.1 Analysis Process
-
-```
-┌─────────────────────────────────────┐
-│ 1. Analyze Current Implementation   │
-│    - How is it currently used?      │
-│    - What are baseline metrics?     │
-│    - Is it effective? (evidence)    │
-│    - What gaps/opportunities exist? │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 2. Document Findings                │
-│    - Create analysis document       │
-│    - Establish baseline metrics     │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 🛑 CHECKPOINT: Research Decision    │
-└─────────────────────────────────────┘
-```
-
-### 3.2 Implementation Analysis
-
-📄 **Reference:** [Implementation Analysis Guide](implementation-analysis.guide.md) — Full methodology, templates, and checkpoint format.
+📄 **Reference:** Follow the [Implementation Analysis Guide](implementation-analysis.guide.md) for the full methodology, analysis criteria, and checkpoint templates.
 
 **Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/01-implementation-analysis.md`
 
-**Analysis should cover:**
-- Current usage patterns and behavior
-- Baseline metrics with evidence
-- Effectiveness assessment
-- Gaps and opportunities for improvement
-- Constraints and limitations
+### 3.1 🛑 Research Decision Checkpoint
 
-### 3.3 🛑 Research Decision Checkpoint
+After completing implementation analysis, **present findings and ask about research** using the checkpoint template from the guide.
 
-**After completing implementation analysis, ask about research:**
+### 3.2 Implementation Analysis Checklist
 
-```markdown
-## 📊 Implementation Analysis Complete
-
-**Key Findings:**
-- [Summary of current state]
-- [Baseline metrics established]
-- [Gaps/opportunities identified]
-
----
-
-## 🔬 Research Decision
-
-Would you like me to perform additional research before planning?
-
-Research (Phase 4) gathers knowledge base insights and web research to inform 
-the planning phase. It's useful when:
-
-- ✅ The problem domain is unfamiliar or complex
-- ✅ Best practices or design patterns should be discovered
-- ✅ External libraries, tools, or approaches may be relevant
-- ✅ You want evidence-based recommendations
-
-It can be skipped when:
-
-- ⏭️ The problem domain is well-understood
-- ⏭️ The solution approach is already clear
-- ⏭️ No external research or pattern discovery is needed
-
-**Options:**
-1. **Yes, perform research** - Proceed to Phase 4 (Research)
-2. **No, skip to planning** - Proceed directly to Phase 5 (Plan & Prepare)
-
-**Which would you prefer?**
-```
-
-### 3.4 Implementation Analysis Checklist
-
-- [ ] Current implementation analyzed
-- [ ] Baseline metrics established with evidence
-- [ ] Gaps and opportunities identified
+- [ ] Implementation analysis completed per guide
 - [ ] `01-implementation-analysis.md` created
 - [ ] 🛑 **Research decision obtained from user**
 
 ---
 
-Research the knowledge base to discover best practices, patterns, and external resources to inform the planning phase.
+## Phase 4: Research
 
-> **Note:** Implementation analysis has already been completed in Phase 3. Use those findings as context for research.
+**Research the knowledge base and external sources** to discover best practices, patterns, and resources to inform the planning phase.
 
-### 4.1 When to Perform Research
+> **Note:** The user decides whether research is needed at the Phase 3 checkpoint. If skipping, proceed directly to Phase 5.
 
-**The user decides whether research is needed** at the Phase 3.3 checkpoint. This decision was made after completing implementation analysis.
-
-> **If skipping:** Proceed directly to Phase 5 (Plan & Prepare). Use the implementation analysis findings from Phase 3 as context for planning.
-
-### 4.2 Research Process
-
-```
-┌─────────────────────────────────────┐
-│ 1. Research Knowledge Base          │
-│    - Search for related concepts    │
-│    - Find relevant design patterns  │
-│    - Discover best practices        │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 🛑 CHECKPOINT: Knowledge Insights   │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 2. Web Research                     │
-│    - Industry best practices        │
-│    - Relevant libraries/tools       │
-│    - Similar implementations        │
-│    - Documentation & tutorials      │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 🛑 CHECKPOINT: Web Research         │
-└─────────────────────────────────────┘
-```
-
-### 4.3 Knowledge Base Research
-
-Before designing an approach, **research the knowledge base** using concept-rag MCP tools to discover relevant concepts, best practices, and design patterns.
+📄 **Reference:** Follow the [Knowledge Base Research Guide](knowledge-base-research.guide.md) for the full methodology, tool usage, and checkpoint templates.
 
 **⚠️ MANDATORY:** Call `get_guidance` before making other concept-rag MCP tool calls.
 
-📄 **Reference:** [Knowledge Base Research Guide](knowledge-base-research.guide.md) — Full methodology, templates, and checkpoint format.
-
 **Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/02-kb-research.md`
 
-### 4.4 🛑 Knowledge Base Insights Checkpoint
+### 4.1 🛑 Knowledge Base Insights Checkpoint
 
-After researching, **STOP and present findings** using the checkpoint template from the guide above.
+After researching the knowledge base, **present findings to user** using the checkpoint template from the guide.
 
-### 4.5 Web Research
+### 4.2 🛑 Web Research Checkpoint
 
-**Research external sources** to discover industry best practices, relevant libraries, and similar implementations.
+After web research, **present findings to user** using the checkpoint template from the guide.
 
-**Areas to research:**
-- Industry best practices for the problem domain
-- Relevant libraries, frameworks, or tools
-- Similar implementations in open source projects
-- Official documentation and tutorials
-- Recent articles or blog posts on the topic
+### 4.3 Research Checklist
 
-**Use the `web_search` tool** to find current information.
-
-**Output:** Add web research findings to `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/02-kb-research.md` (or create separate `02b-web-research.md` if extensive).
-
-### 4.6 🛑 Web Research Checkpoint
-
-After web research, **STOP and present findings:**
-
-```markdown
-## 🌐 Web Research Findings
-
-**Search Topics:**
-1. [Topic 1] - [What was searched]
-2. [Topic 2] - [What was searched]
-
-**Key Findings:**
-
-### Best Practices
-- [Finding 1] - [Source]
-- [Finding 2] - [Source]
-
-### Relevant Libraries/Tools
-- [Library 1] - [Brief description, relevance]
-- [Library 2] - [Brief description, relevance]
-
-### Similar Implementations
-- [Example 1] - [What's relevant]
-
-### Documentation/Resources
-- [Resource 1] - [Link/reference]
-
-**Recommendations:**
-- [How these findings should inform the approach]
-
----
-**Are these external resources relevant? Any additional areas to research?**
-```
-
-### 4.7 Research Checklist
-
-- [ ] User confirmed research is needed (Phase 3.3 checkpoint)
+- [ ] User confirmed research is needed (Phase 3 checkpoint)
 - [ ] `get_guidance` called at start of KB research session (MANDATORY)
-- [ ] Knowledge base researched → `02-kb-research.md`
+- [ ] Knowledge base research completed per guide → `02-kb-research.md`
 - [ ] 🛑 **Knowledge insights confirmed with user**
-- [ ] Web research completed (best practices, libraries, examples)
+- [ ] Web research completed per guide
 - [ ] 🛑 **Web research findings confirmed with user**
 
 ---
 
 ## Phase 5: Plan & Prepare
 
-Design the approach, create the work package plan, and prepare for implementation.
+**Design the approach, create the work package plan, and prepare for implementation.** This phase produces the planning documents and ensures everything is ready before coding begins.
 
 > **Note:** The feature branch and draft PR were created in Phase 1.
 
-### 5.1 When Planning is Required
+📄 **References:**
+- [Design Framework Guide](design-framework.guide.md) — Problem-solving methodology
+- [Work Package Plan Guide](plan.guide.md) — Plan template and guidelines
+- [Test Plan Guide](test-plan.guide.md) — Test plan templates
+- [PR Description Guide](pr-description.guide.md) — PR template
 
-**Always plan when:**
-- Work package has 3+ distinct tasks
-- Multiple files or components affected
-- Architectural decisions needed
-- Performance targets must be met
+**Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/` folder with planning documents
 
-**Skip formal planning when:**
-- Simple, well-understood bug fix
-- Single file change with clear requirements
-- Change can be completed in <30 minutes
+### 5.1 Planning Documents
 
-### 5.2 Design Framework
+Create the work package plan folder with required documents:
 
-**Consult the Design Framework Guide** before designing the approach to structure problem-solving and identify solution strategies.
+| Document | Guide | Required? |
+|----------|-------|-----------|
+| `START-HERE.md` | [start-here.guide.md](start-here.guide.md) | Yes |
+| `README.md` | [readme.guide.md](readme.guide.md) | Yes |
+| `03-work-package-plan.md` | [plan.guide.md](plan.guide.md) | Yes |
+| `00-requirements-elicitation.md` | [requirements-elicitation.guide.md](requirements-elicitation.guide.md) | If Phase 2 |
+| `02-kb-research.md` | [knowledge-base-research.guide.md](knowledge-base-research.guide.md) | If Phase 4 |
+| `01-implementation-analysis.md` | [implementation-analysis.guide.md](implementation-analysis.guide.md) | Recommended |
 
-📄 **Reference:** [Design Framework Guide](design-framework.guide.md)
+### 5.2 🛑 Approach Checkpoint
 
-**The framework helps you:**
-- Define the problem clearly before jumping to solutions
-- Classify the problem type to select the right approach
-- Explore conventional solutions first (design patterns, best practices)
-- Apply inventive principles when trade-offs or contradictions exist
-- Synthesize and document the final design
+After designing the approach, **present to user** using the checkpoint template from the [Plan Guide](plan.guide.md).
 
-> **Note:** For straightforward implementations, a lightweight application focusing on problem definition and conventional solutions may suffice. Apply the full framework for complex problems with trade-offs.
+### 5.3 Prepare for Implementation
 
-### 5.3 Planning Process
+Before starting implementation:
+- Sync feature branch with main
+- Verify on correct feature branch (not main/master)
+- Create test plan (if applicable) per [Test Plan Guide](test-plan.guide.md)
+- Update PR description per [PR Description Guide](pr-description.guide.md)
+- Create TODO list from plan
 
-```
-┌─────────────────────────────────────┐
-│ 0. Apply Design Framework           │
-│    - Problem definition             │
-│    - Problem type classification    │
-│    - Solution approach selection    │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 1. Design Approach                  │
-│    - How will we solve it?          │
-│    - What are the alternatives?     │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 🛑 CHECKPOINT: Approach             │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 2. Define Tasks & Document Plan     │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 3. Sync Branch & Prepare            │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│ 🛑 CHECKPOINT: Ready to Implement   │
-└─────────────────────────────────────┘
-```
+### 5.4 🛑 Ready to Implement Checkpoint
 
-### 5.4 Approach Checkpoint
+Before starting implementation, **present the plan summary to user** using the checkpoint template from the [Plan Guide](plan.guide.md).
 
-After designing the approach, **STOP and confirm:**
+### 5.5 Plan & Prepare Checklist
 
-```markdown
-## 🎯 Proposed Approach
-
-**Solution Overview:** [2-3 sentences]
-
-**Key Components:**
-1. [Component/change 1]
-2. [Component/change 2]
-
-**Alternatives Considered:**
-- Option A: [Brief] - [Why not chosen]
-
-**Trade-offs:**
-- Pro: [Benefit]
-- Con: [Limitation]
-
-**Estimated Effort:** X-Yh agentic + Zh review
-
----
-**Does this approach look right?**
-```
-
-### 5.5 Work Package Plan Folder
-
-> **Note:** Always use the folder pattern for consistency with [Work Packages Workflow](_work-packages.md). Even simple work packages benefit from the structured navigation.
-
-**Location:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/`
-
-**Structure:**
-```
-.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/
-├── START-HERE.md              # Executive summary (required) - includes issue link
-├── README.md                  # Quick navigation (required)
-├── 00-requirements-elicitation.md  # Elicited requirements (if requested)
-├── 03-work-package-plan.md    # Detailed implementation plan (required)
-├── 02-kb-research.md          # Knowledge base research findings (recommended)
-├── 01-implementation-analysis.md  # Current implementation analysis (recommended)
-└── 05-assumptions-log.md      # Assumptions and outcomes (created during implementation)
-```
-
-> **Issue Reference:** The `START-HERE.md` should include the issue link from Phase 1 (e.g., `**Issue:** [#51](https://github.com/OWNER/REPO/issues/51)`).
-
-**For complex work packages**, add additional files as needed:
-```
-.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/
-├── START-HERE.md
-├── README.md
-├── 00-requirements-elicitation.md  # Elicited requirements (features only, see guide)
-├── 03-work-package-plan.md    # Implementation plan
-├── 02-kb-research.md          # KB research (see Knowledge Base Research Guide)
-├── 01-implementation-analysis.md  # Analysis (see Implementation Analysis Guide)
-├── 05-assumptions-log.md      # Assumptions made and outcomes (see below)
-└── 04-test-plan.md         # Detailed testing (if needed)
-```
-
----
-
-#### START-HERE.md
-
-📄 **Reference:** Follow the [Work Package START-HERE](start-here.guide.md) for the full template and guidelines.
-
----
-
-#### README.md
-
-📄 **Reference:** Follow the [Work Package README](readme.guide.md) for the full template and guidelines.
-
----
-
-#### 03-work-package-plan.md
-
-📄 **Reference:** Follow the [Work Package Plan](plan.guide.md) for the full template and guidelines.
-
----
-
-#### 05-assumptions-log.md
-
-📄 **Reference:** Follow the [Assumptions Guide](assumptions-review.guide.md) for assumption categories, review process, and log template.
-
-### 5.6 Sync Feature Branch with Main
-
-**Ensure the feature branch is up to date with main before starting implementation:**
-
-```bash
-# Switch to feature branch (created in Phase 1)
-git checkout type/work-package-name
-
-# Pull latest from main
-git fetch origin main
-git rebase origin/main
-
-# Or merge if preferred
-# git merge origin/main
-```
-
-**Verification:**
-
-```bash
-# Confirm you're on the correct branch
-git branch --show-current
-# Should output: type/work-package-name (NOT main or master)
-```
-
-### 5.7 Create Test Plan (Recommended)
-
-**Create a test plan when the work package has multiple testable behaviors.**
-
-The test plan documents how the work package's requirements will be validated. At this stage, create a **placeholder** test plan—detailed test cases and source links will be added after implementation.
-
-**Steps:**
-
-1. Create test plan file: `docs/tests/test-plan-work-package-name.md`
-2. Use the **Initial Test Plan Template** (placeholder without source links)
-3. List planned test objectives (implementation details come later)
-
-📄 **Reference:** Follow the [Test Plan Creation Guide](test-plan.guide.md) for templates, TDD principles, and guidelines.
-
-> **Note:** The test plan will be finalized in Phase 7 (Finalize) after implementation is complete, adding hyperlinks to actual test locations.
-
-### 5.8 Update PR Description
-
-**Update the PR description with the plan summary.** The PR was created in Phase 1 with just the changelog; now add implementation details.
-
-```bash
-# Update PR description using GitHub API
-gh api repos/OWNER/REPO/pulls/PR_NUMBER -X PATCH \
-  -f body="$(cat /tmp/pr-body.md)"
-```
-
-**PR description should now include:**
-
-```markdown
-## 🎫 Issue
-
-Fixes #[issue-number]
-
-## Summary
-
-[Brief description of what this PR implements]
-
-## Approach
-
-[Key design decisions from Phase 4 planning]
-
-## Tasks
-
-- [ ] Task 1: [Description]
-- [ ] Task 2: [Description]
-- [ ] Task 3: [Description]
-
-## Changelog
-
-See `changes/changed/[number]-description.md`
-
-## Status
-
-🚧 Implementation in progress
-```
-
-📄 **Reference:** Follow the [PR Description Guide](pr-description.guide.md) for the full template.
-
-### 5.9 Create TODO List
-
-Extract tasks from work package plan. Create one TODO per task.
-
-**TODO Management:**
-- Mark only ONE as `in_progress` at a time
-- Update to `completed` immediately after finishing
-- Use descriptive names matching plan
-
-### 5.10 🛑 Ready to Implement Checkpoint
-
-Before starting implementation, **present the plan summary:**
-
-```markdown
-## ✅ Ready to Implement
-
-**Work Package:** [Name]
-**PR:** #[pr-number] - [Title]
-**Issue:** #[issue-number] - [Issue Title]
-**Type:** [Feature/Bug-Fix/Enhancement/Refactor]
-**Estimated Effort:** X-Yh agentic + Zh review
-
-**Tasks to Complete:**
-1. Task 1: [Name] (~X min)
-2. Task 2: [Name] (~X min)
-
-**Success Criteria:**
-- [ ] Criterion 1
-- [ ] Criterion 2
-
-**I will:**
-- Implement tasks in order, committing after each
-- Stop after each task to report progress
-- Create ADR after implementation (if major feature)
-
----
-**Ready to proceed with implementation?**
-```
-
-### 5.11 Plan & Prepare Checklist
-
-- [ ] Issue verified or created (Phase 1)
-- [ ] Requirements elicited (Phase 2, features only)
-- [ ] Research completed (Phase 3)
-- [ ] Design framework consulted
-- [ ] Approach designed with alternatives
-- [ ] 🛑 **Approach confirmed with user**
-- [ ] Tasks broken down with estimates
-- [ ] Success criteria defined (quantitative targets)
-- [ ] Work package plan folder created:
-  - [ ] `START-HERE.md` - Executive summary
-  - [ ] `README.md` - Quick navigation
-  - [ ] `00-requirements-elicitation.md` - Elicited requirements (if requested)
-  - [ ] `03-work-package-plan.md` - Implementation details
-  - [ ] `02-kb-research.md` - Knowledge base findings
-  - [ ] `01-implementation-analysis.md` - Analysis findings
+- [ ] Design framework applied per guide
+- [ ] Approach designed and 🛑 **confirmed with user**
+- [ ] Work package plan folder created with required documents
 - [ ] Feature branch synced with main
-- [ ] On correct feature branch (not main/master) 🛑
+- [ ] On correct feature branch (not main/master)
 - [ ] Test plan created (if applicable)
-- [ ] PR description updated with plan summary
+- [ ] PR description updated
 - [ ] TODOs created from plan
 - [ ] 🛑 **Ready to implement confirmed with user**
 
@@ -925,603 +512,80 @@ Before starting implementation, **present the plan summary:**
 
 ## Phase 6: Implement Tasks
 
-### 6.0 Pre-Implementation Branch Verification
+**Execute the implementation plan task by task.** Each task follows a cycle of implement → test → commit → review assumptions → checkpoint.
 
-**Before writing any code, verify you're on the correct feature branch:**
+> ⚠️ **Before writing any code, verify you're on the correct feature branch (not main/master).**
 
-```bash
-# Check current branch
-git branch --show-current
+📄 **References:**
+- [Assumptions Guide](assumptions-review.guide.md) — Assumption review process, checkpoint templates, log format
+- [Task Completion Review Guide](task-completion-review.guide.md) — Code review methodology and templates
+- [Architecture Review Guide](architecture-review.guide.md) — Architectural significance criteria, ADR templates
 
-# Expected: type/work-package-name (e.g., feat/add-concept-caching)
-# NOT: main, master, or any other branch
-```
-
-⚠️ **Do NOT proceed with implementation until you're on the correct feature branch.**
-
-### 6.1 Task Implementation Pattern
-
-```
-FOR EACH TASK:
-  0. Verify on feature branch (NOT main/master)
-         │
-  1. Read task spec (goal, deliverables)
-         │
-  2. Implement (bottom-up, follow existing patterns)
-         │
-  3. Test immediately (100% coverage of new code)
-         │
-  4. Commit with clear message
-         │
-  5. Update TODO (mark completed, next in_progress)
-         │
-  6. Review assumptions made during implementation
-         │
-  7. 🛑 Report progress + assumptions to user
-         │
-  8. Document assumptions + outcomes in 05-assumptions-log.md
+### 6.1 Task Implementation Cycle
 
-AFTER ALL TASKS COMPLETE:
-  9. Code review (language-specific)
-         │
-  10. 🛑 Report review findings to user
-         │
-  11. Verify architectural significance
-         │
-  12. Create ADR (if significant)
-```
+For each task: implement → test → commit → review assumptions → checkpoint with user.
 
-### 6.2 Assumption Review
+After all tasks complete: code review → architectural significance check → create ADR (if significant).
 
-**After completing each task, explicitly identify assumptions made during implementation.**
+📄 **Reference:** See guides above for detailed methodology and checkpoint templates.
 
-**Preferred approach:** Use the interview-style review, presenting assumptions one at a time with numbered alternatives for the user to choose from.
+### 6.2 🛑 Task Progress Checkpoint
 
-📄 **Reference:** Follow the [Assumptions Guide](assumptions-review.guide.md) for the interview format, assumption categories, self-review questions, and the log template.
+After each task, **report progress and assumptions to user** using the checkpoint template from the [Assumptions Guide](assumptions-review.guide.md).
 
-### 6.3 Code Quality Checklist
+⚠️ **Do NOT proceed until user has reviewed and confirmed assumptions.**
 
-- [ ] Follows existing patterns and architecture
-- [ ] Type-safe (compiler checks pass)
-- [ ] Error handling implemented
-- [ ] No hardcoded values
-- [ ] Documentation comments on public APIs
-- [ ] No debug prints in production code
+### 6.3 🛑 Code Review Checkpoint
 
-### 6.4 Testing as You Code
+After all tasks complete, **perform code review and present findings to user** using the checkpoint template from the [Task Completion Review Guide](task-completion-review.guide.md).
 
-**Don't defer testing - write tests alongside implementation:**
+### 6.4 🛑 Architectural Significance Checkpoint
 
-1. Write interface/type signature
-2. Write basic test
-3. Implement to pass test
-4. Add edge case tests
-5. Implement to pass all tests
-6. Refactor if needed (tests protect you)
+After code review, **assess architectural significance and present to user** using the criteria and checkpoint template from the [Architecture Review Guide](architecture-review.guide.md).
 
-**Language-specific test commands:**
+### 6.5 🛑 ADR Checkpoint (If Significant)
 
-| Language | Run Tests | Run Single Test |
-|----------|-----------|-----------------|
-| Rust | `cargo test` | `cargo test test_name` |
-| TypeScript | `npm test` | `npm test -- path/to/test` |
-| Python | `pytest` | `pytest path/to/test.py` |
-
-### 6.5 Commit Strategy
+If creating an ADR, **present to user for confirmation** using the checkpoint template from the [Architecture Review Guide](architecture-review.guide.md).
 
-**Commit after each task** following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+### 6.6 Implementation Checklist
 
-#### Commit Message Format
-
-```
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
-```
-
-**Rules:**
-- **Description** must be 50 characters or less
-- **Body** (if present) must be separated by a blank line
-- **Footer** (if present) must be separated by a blank line from body
-
-#### Types
-
-| Type | When to Use | SemVer Impact |
-|------|-------------|---------------|
-| `feat` | New feature or capability | MINOR |
-| `fix` | Bug fix | PATCH |
-| `docs` | Documentation only | None |
-| `style` | Formatting, no code change | None |
-| `refactor` | Code change that neither fixes nor adds | None |
-| `perf` | Performance improvement | None |
-| `test` | Adding or correcting tests | None |
-| `build` | Build system or dependencies | None |
-| `ci` | CI configuration | None |
-| `chore` | Other changes (e.g., tooling) | None |
-
-#### Breaking Changes
-
-Indicate breaking changes using `!` after type/scope OR with a `BREAKING CHANGE:` footer:
-
-```
-feat(api)!: remove deprecated endpoints
-
-BREAKING CHANGE: The /v1/users endpoint has been removed. Use /v2/users instead.
-```
-
-#### Scope (Optional)
-
-Use scope to indicate the affected component:
-
-```
-feat(search): add hybrid scoring mode
-fix(ingestion): handle empty documents
-refactor(api): simplify error handling
-```
-
-#### Examples
-
-**Simple commit:**
-```
-feat: add BM25 keyword scoring
-```
-
-**Commit with scope:**
-```
-fix(search): handle null query parameters
-```
-
-**Commit with body:**
-```
-feat(fusion): implement reciprocal rank fusion
-
-Combines vector similarity and BM25 scores using RRF algorithm.
-Uses k=60 constant for score normalization.
-
-Refs: #123
-```
-
-**Commit with footer referencing work package:**
-```
-refactor(scoring): extract score normalization utilities
-
-Move normalization logic to dedicated module for reuse
-across different scoring strategies.
-
-WP: Hybrid Search Implementation (Task 2)
-```
-
-### 6.6 Task Completion Checklist
-
-- [ ] Implementation matches plan
-- [ ] Unit tests written (100% of new code)
-- [ ] ✅ All unit tests passing
-- [ ] ✅ All integration tests passing
-- [ ] ✅ All e2e tests passing
-- [ ] Build succeeds
-- [ ] Documentation comments on public APIs
-- [ ] Committed with clear message
-- [ ] TODO marked as `completed`
-- [ ] Assumptions documented and reported to user
-- [ ] 🛑 **User confirmed assumptions or corrections applied**
-- [ ] Assumptions and outcomes recorded in `05-assumptions-log.md`
-
-**⚠️ Do NOT mark a task complete if any tests are failing.**
-
-### 6.7 🛑 Task Progress & Assumption Review Checkpoint
-
-After each task, **STOP and report progress and assumptions.**
-
-> **Note:** For assumption review, prefer the **interview-style approach** (one assumption at a time with alternatives) described in the [Assumptions Guide](assumptions-review.guide.md). The batch format below is an alternative when assumptions are straightforward.
-
-```markdown
-## ✅ Task N Complete
-
-**What was done:**
-- [Summary of implementation]
-- [Key decisions made]
-
-**Files changed:**
-- `src/path/to/module` - [Description]
-- `tests/...` - [X tests]
-
-**Test Results:**
-- ✅ Unit tests: X/X passing (including Y new tests)
-- ✅ Integration tests: X/X passing
-- ✅ E2E tests: X/X passing
-- ✅ Build successful
-
-**Committed:** `abc123` - "feat: [message]"
-
----
-
-### 🔍 Assumptions Made
-
-**⚠️ The following assumptions were made during implementation. Please review and confirm or correct before proceeding.**
-
-#### Design Decisions
-
-| Decision | Assumption Made | Alternatives Considered |
-|----------|-----------------|------------------------|
-| [e.g., Error handling] | [e.g., Return Result<T> instead of panicking] | [e.g., Could use Option<T>, could panic] |
-| [e.g., Data structure] | [e.g., Used HashMap for O(1) lookup] | [e.g., Could use Vec with linear search] |
-
-#### Behavioral Assumptions
-
-- **[Category]:** [Assumption] — [Rationale]
-- **[Category]:** [Assumption] — [Rationale]
-
-*Examples:*
-- **Default value:** Empty string used when field is missing — assumed this matches existing behavior
-- **Edge case:** Silently ignores duplicate entries — unclear if duplicates should error
-- **Ordering:** Results returned in insertion order — no explicit requirement specified
-
-#### Open Questions
-
-1. [Any uncertainties that emerged during implementation]
-2. [Decisions that could benefit from clarification]
-
-#### Scope Decisions
-
-- **Included:** [What was intentionally added beyond minimum]
-- **Deferred:** [What was intentionally left for later]
-- **Excluded:** [What was explicitly not done and why]
-
----
-**Progress:** Task N of M complete (X% done)
-**Next:** Task N+1 - [Name] (~Y min)
-
-**Please review assumptions above.**
-- ✅ Confirm assumptions are acceptable, OR
-- 🔄 Provide corrections before continuing
-
-**Continue to Task N+1?**
-```
-
-**⚠️ If any tests are failing, do NOT proceed to the next task. Fix failures first.**
-
-**⚠️ Do NOT proceed until user has reviewed and confirmed assumptions.** If assumptions are incorrect, make necessary adjustments before moving on.
-
-### 6.8 Updating the Assumptions Log
-
-**After the user responds to the checkpoint**, update `05-assumptions-log.md`:
-
-```markdown
-## Task N: [Task Name]
-
-**Date:** YYYY-MM-DD
-
-### Assumptions Surfaced
-
-| ID | Category | Assumption | Rationale |
-|----|----------|------------|-----------|
-| N.1 | [Category] | [Assumption made] | [Why this seemed reasonable] |
-| N.2 | [Category] | [Assumption made] | [Why this seemed reasonable] |
-
-### User Response
-
-**Status:** ✅ Confirmed | 🔄 Corrected | ⏸️ Deferred
-
-**Feedback:**
-- [User's response to each assumption]
-
-### Outcome
-
-| ID | Original Assumption | Outcome | Changes Made |
-|----|---------------------|---------|--------------|
-| N.1 | [Assumption] | ✅ Confirmed | None required |
-| N.2 | [Assumption] | 🔄 Corrected | [Description of changes] |
-
-### Lessons Learned
-
-- [Any insights for future tasks]
-```
-
-📄 **Reference:** See the [Assumptions Guide](assumptions-review.guide.md) for the log template.
-
-### 6.9 Code Review (After All Tasks Complete)
-
-**After completing all tasks**, perform a language-specific code review of all changes made during implementation.
-
-#### Language Detection
-
-Detect the primary language used based on:
-- File extensions of modified files (`.rs`, `.ts`, `.py`, etc.)
-- Project configuration files (`Cargo.toml`, `package.json`, `pyproject.toml`)
-- Existing codebase patterns
-
-#### Review Guide Selection
-
-| Language | Review Guide | When to Use |
-|----------|--------------|-------------|
-| Rust/Substrate | [Rust/Substrate Review Guide](../general/rust-substrate-review-prompt.md) | Rust projects, especially Substrate-based blockchain code |
-| TypeScript/JavaScript | *Guide not yet available* | Web/Node.js projects |
-| Python | *Guide not yet available* | Python projects |
-
-> **Note:** When a language-specific guide is not available, perform a general code review focusing on: code quality, error handling, test coverage, documentation, and adherence to project conventions.
-
-#### Review Scope
-
-The code review should cover:
-
-1. **All changes made during implementation** (entire work package diff)
-2. **Adherence to language idioms** and best practices
-3. **Error handling** completeness and appropriateness
-4. **Test coverage** of new/modified code
-5. **Documentation** of public APIs and complex logic
-
-#### 🛑 Code Review Checkpoint
-
-After completing the review, **STOP and present findings:**
-
-```markdown
-## 🔬 Code Review Complete
-
-**Language Detected:** [Rust/TypeScript/Python/Other]
-**Review Guide Used:** [Guide name or "General review"]
-**Files Reviewed:** [Count]
-
-### Review Summary
-
-| Severity | Count | Status |
-|----------|-------|--------|
-| Critical | X | [✅ Fixed / ⚠️ Needs action] |
-| High | X | [✅ Fixed / ⚠️ Needs action] |
-| Medium | X | [⚠️ Documented] |
-| Low | X | [ℹ️ Documented] |
-
-### Issues Found
-
-**Issue #1: [Brief Title]** (Severity)
-- **Location:** `file_path:line_numbers`
-- **Description:** [Brief technical explanation]
-- **Recommendation:** [Suggested fix]
-- **Status:** [Fixed | Needs user decision]
-
-### Strengths Observed
-
-- [Notable positive patterns]
-
-### Recommendations
-
-1. [Any remaining suggestions]
-
----
-**Critical/High issues must be addressed before proceeding.**
-**Medium/Low issues: Address now or defer?**
-```
-
-**If Critical or High severity issues remain:** Address them before proceeding.
-
-**If only Medium or Low severity issues remain:** User decides whether to address now or defer.
-
-### 6.10 Verify Architectural Significance
-
-**After all tasks are complete**, verify whether the implementation warrants an ADR before creating one.
-
-**Rationale:** Not all work packages require ADRs. ADRs should document architecturally significant decisions—those that are difficult to reverse, affect system-wide quality attributes, or establish precedents for future decisions.
-
-#### Architectural Significance Checklist
-
-Use this checklist to determine if the work package warrants an ADR:
-
-| Criterion | Check |
-|-----------|-------|
-| Affects multiple components? | ☐ |
-| Involves quality attribute trade-offs? | ☐ |
-| Establishes a pattern others will follow? | ☐ |
-| Would be costly to reverse? | ☐ |
-| Future developers need to understand why? | ☐ |
-| Changes core abstractions or data models? | ☐ |
-
-**Threshold:** If **3 or more** criteria are checked, create an ADR.
-
-#### Quick Decision Guide
-
-| Work Package Type | ADR Required? |
-|-------------------|---------------|
-| Major new feature with new capabilities | ✅ Yes |
-| Architectural change affecting multiple components | ✅ Yes |
-| New pattern, library, or framework introduction | ✅ Yes |
-| Changes to core abstractions or data models | ✅ Yes |
-| Bug fix (even complex multi-file) | ❌ No |
-| Refactoring (internal improvements) | ❌ No |
-| Minor feature (small enhancement, UI tweak) | ❌ No |
-| Performance optimization (unless architectural) | ❌ No |
-| Documentation update | ❌ No |
-
-#### 🛑 Architectural Significance Checkpoint
-
-After completing all tasks, **STOP and present the significance assessment:**
-
-```markdown
-## 🏛️ Architectural Significance Assessment
-
-**Work Package:** [Name]
-
-### Checklist Results
-
-| Criterion | Result | Evidence |
-|-----------|--------|----------|
-| Affects multiple components? | [✅/❌] | [Brief evidence] |
-| Involves quality attribute trade-offs? | [✅/❌] | [Brief evidence] |
-| Establishes a pattern others will follow? | [✅/❌] | [Brief evidence] |
-| Would be costly to reverse? | [✅/❌] | [Brief evidence] |
-| Future developers need to understand why? | [✅/❌] | [Brief evidence] |
-| Changes core abstractions or data models? | [✅/❌] | [Brief evidence] |
-
-**Criteria Met:** X of 6
-**Threshold:** 3 or more → Create ADR
-
-### Recommendation
-
-[✅ Create ADR | ❌ Skip ADR] because [brief rationale].
-
----
-**Do you agree with this assessment? Should I [create/skip] the ADR?**
-```
-
-### 6.11 Create ADR (If Architecturally Significant)
-
-**If the significance assessment indicates an ADR is warranted**, create one to document the architectural decisions made during implementation.
-
-**Rationale:** Architectural decisions are not finalized until implementation is complete. Constraints encountered during implementation often require design changes. Creating the ADR after implementation ensures it captures the *actual* architecture, not the *planned* architecture.
-
-#### ⚠️ CRITICAL: Never Modify Historical ADRs
-
-**ADRs are immutable historical records.** They document the design decision *at the time it was made*.
-
-- **NEVER modify existing ADRs** to reflect later changes
-- **DO NOT update examples** in old ADRs when code changes
-- If a decision is superseded, create a **new ADR** that references and supersedes the old one
-- The new ADR's "Context" section should explain why the previous decision changed
-
-**Rationale:** ADRs serve as an audit trail. Future developers need to understand what was decided and why, including decisions that were later changed. Modifying historical ADRs destroys this valuable context.
-
-#### ADR Creation Steps
-
-**Steps:**
-
-1. Create ADR file: `.engineering/artifacts/adr/NNNN-work-package-name.md`
-2. Set status to **Accepted** (since implementation is complete)
-3. Document the actual architectural decisions made during implementation
-4. Include **Consequences** section (positive, negative, neutral)
-5. Commit with message: `docs(adr): add ADR for [work package name]`
-
-📄 **Reference:** Follow the [Architecture Review Guide](architecture-review.guide.md) for full template, architectural significance criteria, and guidelines.
-
-#### 🛑 ADR Checkpoint
-
-After creating the ADR, **STOP and confirm with user:**
-
-```markdown
-## 📋 ADR Created
-
-**ADR:** `.engineering/artifacts/adr/NNNN-work-package-name.md`
-**Status:** Accepted
-
-**Key Decisions Documented:**
-1. [Decision 1] - [Brief rationale]
-2. [Decision 2] - [Brief rationale]
-
-**Alternatives Considered:**
-- [Alternative 1] - [Why not chosen]
-
-**Consequences:**
-- Positive: [Key benefit]
-- Negative: [Key trade-off accepted]
-
----
-**Does this ADR accurately capture the architectural decisions made?**
-```
+- [ ] Verified on correct feature branch before starting
+- [ ] Tasks implemented per plan with tests
+- [ ] 🛑 **Progress and assumptions confirmed with user after each task**
+- [ ] Assumptions logged in `05-assumptions-log.md`
+- [ ] Code review completed per guide
+- [ ] 🛑 **Review findings confirmed with user**
+- [ ] Architectural significance assessed per guide
+- [ ] 🛑 **Significance assessment confirmed with user**
+- [ ] ADR created if significant, 🛑 **confirmed with user**
 
 ---
 
 ## Phase 7: Testing & Validation
 
-### 7.1 Continuous Testing
+**Validate the implementation through comprehensive testing.** All tests must pass before the work package is considered complete.
 
-**After each task:**
+⚠️ **CRITICAL:** ALL existing tests (unit, integration, e2e) must pass—regardless of whether the work package modified the code they cover.
 
-```bash
-# Run tests for current component
-#    Rust:       cargo test module_name
-#    TypeScript: npm test -- path/to/test
-#    Python:     pytest path/to/test.py
+📄 **Reference:** See the [Test Plan Guide](test-plan.guide.md) for testing methodology, test levels, and language-specific commands.
 
-# Run full test suite
-#    Rust:       cargo test
-#    TypeScript: npm test
-#    Python:     pytest
+### 7.1 Validation Requirements
 
-# Verify build
-#    Rust:       cargo build
-#    TypeScript: npm run build
-```
+- All unit tests pass (100% pass rate)
+- All integration tests pass (100% pass rate)
+- All e2e tests pass (100% pass rate)
+- Build succeeds with no errors
+- No new linter errors
+- Performance targets met (if applicable)
 
-**If tests fail:** Fix immediately before moving on.
+**Test Failure Policy:** A work package is NOT complete if any test fails. Fix failures before proceeding.
 
-### 7.2 Test Levels
+### 7.2 Validation Checklist
 
-**⚠️ CRITICAL: ALL existing tests must pass before a work package is considered complete.**
-
-This includes unit tests, integration tests, and e2e tests—regardless of whether the work package modified the code they cover.
-
-#### Unit Tests (Always Required)
-
-**Location:**
-- Rust: `src/module/tests.rs` or `tests/module_test.rs`
-- TypeScript: `src/**/__tests__/component.test.ts`
-- Python: `tests/test_component.py`
-
-**Coverage:** 100% of new code
-
-**Categories to cover:**
-- ✅ Normal/happy path
-- ✅ Edge cases (empty, null/None, boundary values)
-- ✅ Error conditions
-
-#### Integration Tests (Required to Pass)
-
-Test multiple components working together with real dependencies.
-
-**Requirement:** All existing integration tests MUST pass. If the work package adds new integration points, add corresponding integration tests.
-
-#### E2E Tests (Required to Pass)
-
-Test complete workflows and validate end-to-end behavior.
-
-**Requirement:** All existing e2e tests MUST pass. If the work package affects user-facing workflows, add or update e2e tests.
-
-#### Performance Tests (If Applicable)
-
-Validate performance targets when the work package has performance criteria.
-
-### 7.3 Final Validation
-
-**⚠️ MANDATORY: All tests must pass before creating a PR.**
-
-Before creating PR, run the complete test suite:
-
-```bash
-# TypeScript/Node.js
-npm test                    # All unit tests
-npm run test:integration    # All integration tests (if available)
-npm run test:e2e            # All e2e tests (if available)
-npm run build               # Build verification
-npm run lint                # Linter check
-
-# Rust
-cargo test                  # All tests (unit + integration)
-cargo build                 # Build verification
-cargo clippy                # Linter check
-
-# Python
-pytest                      # All tests
-pytest tests/integration    # Integration tests
-pytest tests/e2e            # E2E tests
-```
-
-**If ANY test fails:** Fix the issue before proceeding. Do NOT create a PR with failing tests.
-
-### 7.4 Validation Checklist
-
-**All items are REQUIRED for work package completion:**
-
-- [ ] ✅ All unit tests pass (100% pass rate)
-- [ ] ✅ All integration tests pass (100% pass rate)
-- [ ] ✅ All e2e tests pass (100% pass rate)
-- [ ] ✅ Build succeeds with no errors
-- [ ] ✅ No new linter errors
-- [ ] Performance targets met (if work package has performance criteria)
+- [ ] All tests pass (unit, integration, e2e)
+- [ ] Build succeeds
+- [ ] No new linter errors
 - [ ] All TODOs completed
-
-**Test Failure Policy:**
-- A work package is NOT complete if any test fails
-- Fix failing tests before moving to documentation or PR creation
-- If a test failure is unrelated to your changes, investigate and document the issue
 
 ---
 
@@ -1544,268 +608,73 @@ After completing the review, **present findings to user** using the checkpoint t
 
 ## Phase 9: Finalize
 
-> **Note:** This phase focuses on finalizing documentation after implementation is complete.
+**Finalize documentation after implementation is complete.**
 
-### 9.1 Update ADR Status (If Applicable)
+📄 **References:**
+- [Test Plan Guide](test-plan.guide.md) — Finalize test plan with source links
+- [Work Package Completion Guide](complete.guide.md) — COMPLETE.md template
 
-**Skip this step if no ADR was created** (i.e., for bug fixes, refactoring, or minor features).
+### 9.1 Finalization Tasks
 
-If an ADR was created in Phase 5, verify its status is **Accepted**:
+- Update ADR status to Accepted (if ADR exists)
+- Finalize test plan with source links per [Test Plan Guide](test-plan.guide.md)
+- Create `COMPLETE.md` per [Completion Guide](complete.guide.md)
+- Ensure inline documentation on all public APIs
 
-```markdown
-## Status
+### 9.2 Finalization Checklist
 
-Accepted
-```
-
-Commit this change:
-
-```bash
-git commit -m "docs(adr): update ADR status to Accepted"
-```
-
-### 9.2 Finalize Test Plan
-
-If a placeholder test plan was created in Phase 4, update it with implementation details:
-
-**Steps:**
-
-1. Add hyperlinks to Test IDs pointing to actual test locations (`#L<line>`)
-2. Add hyperlinked symbols in the Overview section
-3. Expand the table with Steps and Expected Result columns
-4. Add verified Running Tests commands
-
-📄 **Reference:** Use the **Final Test Plan Template** from the [Test Plan Creation Guide](test-plan.guide.md).
-
-Commit with the ADR update or separately:
-
-```bash
-git commit -m "docs: finalize test plan with source links"
-```
-
-### 9.3 Work Package Completion Document
-
-**Create:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/COMPLETE.md`
-
-📄 **Reference:** Follow the [Work Package Completion](complete.guide.md) for the full template and guidelines.
-
-### 9.4 Inline Documentation
-
-Ensure documentation on all public APIs:
-
-**Rust:**
-```rust
-/// Brief description.
-///
-/// # Arguments
-/// * `param` - Description
-///
-/// # Returns
-/// Description
-pub fn function(param: Type) -> Result { ... }
-```
-
-**TypeScript:**
-```typescript
-/**
- * Brief description.
- * @param param - Description
- * @returns Description
- */
-export function fn(param: Type): Result { ... }
-```
+- [ ] ADR status updated (if applicable)
+- [ ] Test plan finalized with source links (if applicable)
+- [ ] `COMPLETE.md` created per guide
+- [ ] Inline documentation complete
 
 ---
 
 ## Phase 10: Update PR
 
-> **Note:** The PR was created in Phase 1. This phase updates the PR description with final implementation details.
-
-### 10.1 Pre-Finalization Verification
-
-```bash
-git branch --show-current    # On feature branch?
-git status                   # Clean working directory?
-git log origin/main..HEAD    # Review all commits
-# Build and tests pass?
-```
-
-### 10.2 Push Final Changes
-
-Ensure all commits are pushed:
-
-```bash
-git push origin type/work-package-name
-```
-
-### 10.3 Update PR Description
-
-Update the PR description to reflect the completed implementation.
+**Update the PR with final implementation details and mark ready for review.** The PR was created in Phase 1; this phase updates it with completed work.
 
 📄 **Reference:** Follow the [PR Description Guide](pr-description.guide.md) for the full template and section guidelines.
 
-> **Important:** If an ADR exists, link to it on the *feature branch*, not main. Use the format:
-> `https://github.com/OWNER/REPO/blob/BRANCH-NAME/.engineering/artifacts/adr/NNNN-name.md`
->
-> Example: `**ADR:** [NNNN-work-package-name](https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/feat/work-package-name/.engineering/artifacts/adr/NNNN-work-package-name.md)`
->
-> Relative links like `.engineering/artifacts/adr/NNNN-name.md` resolve to main, which won't contain the ADR until the PR is merged.
+### 10.1 PR Update Tasks
 
-**Updating the PR Description:**
+- Verify on feature branch with clean working directory
+- Push all commits
+- Update PR description per [PR Description Guide](pr-description.guide.md)
+- Mark PR ready for review
 
-Use the GitHub API directly instead of `gh pr edit` (which may fail due to GraphQL issues with Projects):
+### 10.2 🛑 PR Update Checkpoint
 
-```bash
-# Write the PR body to a file
-cat > /tmp/pr-body.md << 'EOF'
-[PR description content here]
-EOF
+Before marking PR ready for review, **present updated description to user** using the checkpoint template from the guide.
 
-# Update using GitHub API
-gh api repos/OWNER/REPO/pulls/PR_NUMBER -X PATCH -f body="$(cat /tmp/pr-body.md)"
-```
+### 10.3 Update PR Checklist
 
-### 10.4 Mark PR Ready for Review
-
-**Convert draft PR to ready for review:**
-
-```bash
-# Mark PR as ready for review
-gh pr ready
-```
-
-### 10.5 🛑 PR Update Checkpoint
-
-Before marking PR ready for review, **present to user:**
-
-```markdown
-## 📝 PR Ready for Review
-
-**PR:** #[number]
-**Title:** `type: Work Package Name`
-
-**Updated Description:**
-[Show the updated PR description]
-
----
-**Ready to mark PR as ready for review?**
-```
-
-### 10.6 After PR Updated
-
-Update WP-COMPLETE.md with final PR number and status.
+- [ ] All changes pushed
+- [ ] PR description updated per guide
+- [ ] 🛑 **PR description confirmed with user**
+- [ ] PR marked ready for review
+- [ ] `COMPLETE.md` updated with final PR number
 
 ---
 
 ## Phase 11: Post-Implementation
 
-### 11.1 Capture Session History (Private)
+**Complete post-implementation tasks after the PR is created.**
 
-**⚠️ PRIVATE DATA:** Chat history contains potentially sensitive session data. It must ONLY be stored in the private metadata location specified below. NEVER commit this data to the repository.
+📄 **Reference:** Follow the [Workflow Retrospective Guide](workflow-retrospective.guide.md) for retrospective methodology and report template.
 
-#### Prerequisite Check
+### 11.1 Post-Implementation Tasks
 
-**Before capturing history, verify the metadata folder exists and is a valid repository:**
+- Capture session history (if metadata repository exists) — private, never committed
+- Workflow retrospective per [Workflow Retrospective Guide](workflow-retrospective.guide.md) (skip if trivial)
+- After PR merged: Update work package plan status
+- Select next work package
 
-```bash
-# Check if metadata folder exists and is a git repository (submodule or worktree)
-if [ -d ".engineering/agent/metadata" ] && [ -d ".engineering/agent/metadata/.git" -o -f ".engineering/agent/metadata/.git" ]; then
-    echo "✅ Metadata repository found - proceed with history capture"
-else
-    echo "⏭️ Metadata repository not found - skipping history capture"
-fi
-```
+### 11.2 Post-Implementation Checklist
 
-**Skip history capture if:**
-- `.engineering/agent/metadata/` folder does not exist
-- `.engineering/agent/metadata/` is not a git submodule or worktree
-
-> **Rationale:** History capture requires a dedicated private repository. Without proper repository setup, there's no safe location to store session data.
-
-#### Location
-
-```
-.engineering/agent/metadata/projects/<project-name>/<work-package-name>/history/
-```
-
-**Structure:**
-```
-.engineering/agent/metadata/projects/
-└── <project-name>/
-    └── <work-package-name>/
-        └── history/
-            ├── session-YYYY-MM-DD-HH-MM.md    # Session transcript
-            └── summary.md                      # Session summary
-```
-
-**Session Transcript** (`session-YYYY-MM-DD-HH-MM.md`):
-- Complete chat history from the work package session
-- Includes all agent-user exchanges
-- Preserves decision rationale and context
-
-**Session Summary** (`summary.md`):
-```markdown
-# Work Package Session Summary
-
-**Work Package:** [Name]
-**PR:** #[number]
-**Sessions:** [Count]
-**Date Range:** YYYY-MM-DD to YYYY-MM-DD
-
-## Key Decisions Made
-- [Decision 1] - [Brief rationale]
-- [Decision 2] - [Brief rationale]
-
-## Assumptions Confirmed
-- [Assumption 1]
-- [Assumption 2]
-
-## Issues Encountered
-- [Issue 1] - [Resolution]
-
-## Lessons Learned
-- [Insight 1]
-- [Insight 2]
-```
-
-**Privacy Rules:**
-- ❌ NEVER commit history files to the repository
-- ❌ NEVER reference history files in committed documentation
-- ❌ NEVER copy history content to `.engineering/artifacts/` or any committed location
-- ✅ ONLY store in `.engineering/agent/metadata/` (private, gitignored)
-- ✅ Ensure `.engineering/agent/` is in `.gitignore`
-
-### 11.2 Workflow Retrospective
-
-**Analyze the session to identify potential workflow improvements.** Review all user questions, requests, and feedback that were NOT direct responses to checkpoint questions.
-
-📄 **Reference:** Follow the [Workflow Retrospective Guide](workflow-retrospective.guide.md) for the full methodology, signal types, and report template.
-
-**Process overview:**
-1. Count total user messages (checkpoint vs non-checkpoint)
-2. Categorize non-checkpoint interactions (clarifications, corrections, questions, frustration)
-3. Identify root causes and map to workflow sections
-4. Formulate prioritized recommendations
-5. Create retrospective report
-
-**Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/06-workflow-retrospective.md`
-
-**Skip when:** Session was straightforward with only checkpoint responses, or work package was trivial (<30 min).
-
-### 11.3 After PR Merged
-
-Update work package plan status:
-```markdown
-**Status:** ✅ COMPLETED
-**PR:** #42
-**Merged:** [Date]
-```
-
-### 11.4 Select Next Work Package
-
-- Review priority list
-- Check dependencies
-- Repeat this workflow
+- [ ] Session history captured (if metadata repo exists)
+- [ ] Workflow retrospective completed (if non-trivial session)
+- [ ] Status updated after PR merged
 
 ---
 
@@ -1831,64 +700,50 @@ Update work package plan status:
 - [ ] `00-requirements-elicitation.md` created
 
 ### Implementation Analysis (Phase 3 - Always)
-- [ ] Current implementation analyzed
-- [ ] Baseline metrics established with evidence
-- [ ] Gaps and opportunities identified
+- [ ] Implementation analysis completed per guide
 - [ ] `01-implementation-analysis.md` created
-- [ ] 🛑 **Research decision obtained from user** (Phase 3.3 checkpoint)
+- [ ] 🛑 **Research decision obtained from user**
 
 ### Research (Phase 4 - If Requested)
-- [ ] User confirmed research is needed (Phase 3.3 checkpoint)
+- [ ] User confirmed research is needed (Phase 3 checkpoint)
 - [ ] `get_guidance` called at start of KB research session (MANDATORY)
-- [ ] Knowledge base researched → `02-kb-research.md`
-- [ ] Knowledge insights confirmed 🛑
-- [ ] Web research completed (best practices, libraries, examples)
-- [ ] Web research findings confirmed 🛑
+- [ ] Research completed per guide → `02-kb-research.md`
+- [ ] 🛑 **Knowledge insights confirmed with user**
+- [ ] 🛑 **Web research findings confirmed with user**
 
 ### Plan & Prepare (Phase 5)
-- [ ] Design framework applied
-- [ ] Approach designed with alternatives
-- [ ] Approach confirmed 🛑
-- [ ] Tasks broken down with estimates
-- [ ] Success criteria defined
-- [ ] Plan documents created
+- [ ] Planning completed per guides
+- [ ] 🛑 **Approach confirmed with user**
+- [ ] Work package plan folder created with required documents
 - [ ] Feature branch synced with main
-- [ ] Verified on feature branch (not main/master) 🛑
+- [ ] On correct feature branch (not main/master)
 - [ ] Test plan created (if applicable)
-- [ ] PR description updated with plan summary
-- [ ] TODOs created
-- [ ] Ready to implement confirmed 🛑
+- [ ] PR description updated
+- [ ] TODOs created from plan
+- [ ] 🛑 **Ready to implement confirmed with user**
 
 ### Implementation (Phase 6)
-- [ ] `05-assumptions-log.md` created before Task 1
-- [ ] Tasks completed with progress reports 🛑
-- [ ] Assumptions documented and reviewed with user after each task 🛑
-- [ ] Assumptions and outcomes recorded in `05-assumptions-log.md` after each task
-- [ ] Code review performed after all tasks complete (language-specific)
-- [ ] Critical/High severity issues addressed before proceeding 🛑
-- [ ] ✅ All unit tests passing (100% pass rate)
-- [ ] ✅ All integration tests passing (100% pass rate)
-- [ ] ✅ All e2e tests passing (100% pass rate)
-- [ ] Build succeeds
-- [ ] All TODOs completed
-- [ ] Architectural significance verified 🛑
-- [ ] ADR created (if architecturally significant; status: Accepted) 🛑
+- [ ] Tasks implemented per plan with tests
+- [ ] 🛑 **Progress and assumptions confirmed with user after each task**
+- [ ] Assumptions logged in `05-assumptions-log.md`
+- [ ] Code review completed per guide
+- [ ] 🛑 **Review findings confirmed with user**
+- [ ] Architectural significance assessed per guide
+- [ ] 🛑 **Significance assessment confirmed with user**
+- [ ] ADR created if significant, 🛑 **confirmed with user**
 
 ### Strategic Review (Phase 8)
 - [ ] Strategic review completed per guide
 - [ ] 🛑 **Review findings confirmed with user**
 
 ### Finalize (Phase 9)
-- [ ] ADR verified (if exists)
-- [ ] Test plan finalized with source links (if applicable)
-- [ ] COMPLETE.md written (see [Completion](complete.guide.md))
-- [ ] Inline docs complete
+- [ ] Finalization tasks completed per guides
+- [ ] `COMPLETE.md` created
 
 ### Update PR (Phase 10)
-- [ ] All changes pushed
-- [ ] PR description updated with implementation details 🛑
-- [ ] Draft PR marked ready for review
-- [ ] Docs updated with PR number
+- [ ] PR updated per guide
+- [ ] 🛑 **PR description confirmed with user**
+- [ ] PR marked ready for review
 
 ---
 
