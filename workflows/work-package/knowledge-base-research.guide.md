@@ -32,82 +32,87 @@ Before designing a solution, research the knowledge base using concept-rag MCP t
 
 ---
 
-## Research Tools
+## Research Approach
 
-Use concept-rag MCP tools to query the knowledge base.
+Use concept-rag MCP tools to query the knowledge base, guided by the intent-based system.
 
-### ⚠️ MANDATORY: Call get_guidance First
+### ⚠️ MANDATORY: Fetch Guidance Resource First
 
-**At the start of any knowledge base research session, call `get_guidance` before making other concept-rag MCP tool calls.**
+**At the start of any knowledge base research session, fetch the `concept-rag://guidance` resource before making tool calls.**
 
-The `get_guidance` tool returns research guidelines that ensure:
-- **Correct tool selection** - Which tool to use for your specific query type
-- **Efficient searching** - Aim for 4-6 tool calls maximum per research session
-- **Proper answer synthesis** - How to combine results into coherent findings
+The guidance resource provides:
+- **Intent matching** — Match your research goal to the appropriate intent
+- **Skill selection** — Each intent maps to skills that define tool workflows
+- **Efficient searching** — Aim for 4-6 tool calls maximum per research session
+- **Proper answer synthesis** — How to combine results into coherent findings
 
-> **Note:** Call `get_guidance` once per research session, not before each individual search tool call. The returned guidance applies for the duration of the session.
+> **Note:** Fetch the guidance resource once per research session. The guidance applies for the duration of the session.
 
 **Communication rule:** Never narrate your search process to the user. Instead, synthesize answers directly and cite sources. The user wants findings, not a play-by-play of tool calls.
 
-### Available Tools
+### Intent-Based Research
 
-| Tool | Purpose | When to Use |
-|------|---------|-------------|
-| `get_guidance` | Get research guidelines | **ALWAYS call first** |
-| `broad_chunks_search` | Find content across ALL documents | Start here with work package keywords |
-| `concept_search` | Find where concepts are discussed | Track specific concept mentions |
-| `catalog_search` | Discover documents about topics | Find authoritative sources |
-| `chunks_search` | Search within a known document | Deep dive into identified docs |
-| `list_concepts_in_category` | See concepts in a domain | Explore conceptual landscape |
+Match your research goal to an intent, then follow the skill workflow:
+
+| Research Goal | Intent | Primary Skill |
+|--------------|--------|---------------|
+| Learn what the KB says about a topic | `understand-topic` | `deep-research` |
+| Find design patterns for a problem | `identify-patterns` | `pattern-research` |
+| Find best practices for a domain | `identify-best-practices` | `practice-research` |
+| Track where a concept appears | `explore-concept` | `concept-exploration` |
+| Understand a category's concepts | `explore-category` | `category-exploration` |
+
+> **Reference:** See `concept-rag://intents` for the full intent index and `concept-rag://skills` for skill workflows.
 
 ---
 
 ## Research Strategy
 
-### Step 0: Get Guidance (MANDATORY)
+### Step 0: Fetch Guidance (MANDATORY)
 
-**Always start by calling `get_guidance`** to receive current research guidelines:
-
-```
-Tool: get_guidance
-```
-
-This returns tool selection rules, search efficiency tips, and synthesis guidelines specific to the knowledge base. Follow the returned guidance throughout your research session.
-
-### Step 1: Start Broad
-
-Use `broad_chunks_search` with work package keywords:
+**Always start by fetching `concept-rag://guidance`** to receive the intent-based research system:
 
 ```
-Query: "caching strategy performance optimization"
-Query: "error handling retry patterns"
-Query: "API versioning backward compatibility"
+Resource: concept-rag://guidance
 ```
 
-**Goal:** Identify recurring themes and relevant documents.
+This returns the intent matching rules and skill workflows. Follow the guidance throughout your research session.
 
-### Step 2: Identify Key Concepts
+### Step 1: Match Intent
 
-From initial results, note:
+Identify which intent matches your research goal:
+
+| If researching... | Use intent |
+|-------------------|------------|
+| Best practices for a domain | `identify-best-practices` |
+| Design patterns for a problem | `identify-patterns` |
+| General topic understanding | `understand-topic` |
+| Where a concept is discussed | `explore-concept` |
+| Concepts in a category | `explore-category` |
+
+### Step 2: Follow Skill Workflow
+
+Each intent maps to a skill with a defined tool workflow. The skill documentation shows:
+- Which tools to use
+- The order/iteration pattern
+- What context to preserve between calls
+
+**Example:** For `identify-patterns` → use `pattern-research` skill:
+1. Find pattern concepts in the KB
+2. Get authoritative sources
+3. Extract pattern details (iterate as needed)
+
+### Step 3: Identify Key Concepts
+
+From results, note:
 - Recurring terminology
 - Referenced design patterns
 - Mentioned best practices
 - Cited sources or documents
 
-### Step 3: Find Authoritative Sources
-
-Use `catalog_search` to find documents about identified topics:
-
-```
-Query: "distributed systems caching"
-Query: "API design guidelines"
-```
-
-**Goal:** Locate primary sources for deeper exploration.
-
 ### Step 4: Extract Specific Guidance
 
-Use `chunks_search` on identified documents to find:
+Use the skill's tools to find:
 - Implementation recommendations
 - Trade-off discussions
 - Warning signs or anti-patterns
@@ -125,9 +130,9 @@ Connect findings to requirements:
 
 ## Research Checklist
 
-- [ ] `get_guidance` called at start of session (MANDATORY, once per session)
-- [ ] Followed returned guidance for tool selection throughout session
-- [ ] Broad search performed with work package keywords
+- [ ] `concept-rag://guidance` fetched at start of session (MANDATORY)
+- [ ] Intent matched to research goal
+- [ ] Skill workflow followed for selected intent
 - [ ] Key concepts identified and noted
 - [ ] Relevant documents discovered
 - [ ] Specific guidance extracted from sources
@@ -156,12 +161,11 @@ Store research findings in a discrete planning document:
 
 ---
 
-## Search Queries Executed
+## Research Approach
 
-| Query | Tool | Results Summary |
-|-------|------|-----------------|
-| "[query 1]" | broad_chunks_search | [Brief findings] |
-| "[query 2]" | catalog_search | [Documents found] |
+| Intent | Skill Used | Results Summary |
+|--------|------------|-----------------|
+| [intent used] | [skill followed] | [Brief findings] |
 
 ---
 

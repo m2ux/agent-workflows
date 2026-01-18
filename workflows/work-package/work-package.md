@@ -261,6 +261,8 @@ git checkout -b type/work-package-name
 
 ### 1.6 Add Initial Changelog
 
+> **Skip this step** if the project does not have a `changes/` folder.
+
 **Create a changelog file in `changes/changed/` that references the issue:**
 
 **Naming convention:** `{issue-number}-{brief-description}.md`
@@ -366,7 +368,7 @@ It can be skipped when:
 - [ ] Issue created (if needed) following [Issue Creation Guide](github-issue-creation.guide.md)
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
-- [ ] Changelog added to `changes/changed/`
+- [ ] Changelog added to `changes/changed/` (skip if folder doesn't exist)
 - [ ] Draft PR created linking to issue
 - [ ] 🛑 **PR confirmed and elicitation decision obtained from user**
 
@@ -435,9 +437,9 @@ After completing implementation analysis, **present findings and ask about resea
 
 > **Note:** The user decides whether research is needed at the Phase 3 checkpoint. If skipping, proceed directly to Phase 5.
 
-📄 **Reference:** Follow the [Knowledge Base Research Guide](knowledge-base-research.guide.md) for the full methodology, tool usage, and checkpoint templates.
+📄 **Reference:** Follow the [Knowledge Base Research Guide](knowledge-base-research.guide.md) for the full methodology and checkpoint templates.
 
-**⚠️ MANDATORY:** Call `get_guidance` before making other concept-rag MCP tool calls.
+**⚠️ MANDATORY:** Fetch `concept-rag://guidance` resource before making concept-rag MCP tool calls.
 
 **Output:** `.engineering/artifacts/planning/YYYY-MM-DD-work-package-name/02-kb-research.md`
 
@@ -452,7 +454,7 @@ After web research, **present findings to user** using the checkpoint template f
 ### 4.3 Research Checklist
 
 - [ ] User confirmed research is needed (Phase 3 checkpoint)
-- [ ] `get_guidance` called at start of KB research session (MANDATORY)
+- [ ] `concept-rag://guidance` fetched at start of KB research session (MANDATORY)
 - [ ] Knowledge base research completed per guide → `02-kb-research.md`
 - [ ] 🛑 **Knowledge insights confirmed with user**
 - [ ] Web research completed per guide
@@ -758,7 +760,7 @@ Before marking PR ready for review, **present updated description to user** usin
 - [ ] Issue created if needed (see [Issue Creation Guide](github-issue-creation.guide.md))
 - [ ] 🛑 **Issue confirmed with user**
 - [ ] Feature branch created with correct naming
-- [ ] Changelog added to `changes/changed/`
+- [ ] Changelog added to `changes/changed/` (skip if folder doesn't exist)
 - [ ] Draft PR created linking to issue
 - [ ] 🛑 **PR confirmed and elicitation decision obtained from user**
 
@@ -778,7 +780,7 @@ Before marking PR ready for review, **present updated description to user** usin
 
 ### Research (Phase 4 - If Requested)
 - [ ] User confirmed research is needed (Phase 3 checkpoint)
-- [ ] `get_guidance` called at start of KB research session (MANDATORY)
+- [ ] `concept-rag://guidance` fetched at start of KB research session (MANDATORY)
 - [ ] Research completed per guide → `02-kb-research.md`
 - [ ] 🛑 **Knowledge insights confirmed with user**
 - [ ] 🛑 **Web research findings confirmed with user**
@@ -861,7 +863,7 @@ Before marking PR ready for review, **present updated description to user** usin
 | Proceed past validation failures | Broken code gets merged; decision points exist to enable structured recovery |
 | Skip assumption review | Hidden design decisions compound errors; user loses opportunity to correct course early |
 | Skip KB research | Missing applicable patterns and practices (see [KB Research Guide](knowledge-base-research.guide.md)) |
-| Skip `get_guidance` at session start | Inefficient searching, wrong tool selection, excessive tool calls |
+| Skip fetching guidance resource | Inefficient searching, wrong intent/skill selection, excessive tool calls |
 | Narrate search process | Users want synthesized answers with citations, not play-by-play of searches |
 | Skip analysis | No baseline, can't measure success, miss opportunities (see [Implementation Analysis Guide](implementation-analysis.guide.md)) |
 
