@@ -122,7 +122,8 @@ engineering/
 │   ├── reviews/              # Code and architecture reviews
 │   └── templates/            # Reusable templates
 ├── agent/                    # Agent-related content
-│   ├── resources/            # Agent resources and workflows
+│   ├── resources/            # Agent resources and guides
+│   ├── workflows/            # Workflow definitions
 │   └── metadata/             # Private metadata
 └── scripts/                  # Utility scripts
 \`\`\`
@@ -171,7 +172,8 @@ Engineering artifacts should be:
 - `artifacts/planning/` - Work package plans and specifications
 - `artifacts/reviews/` - Code and architecture reviews
 - `artifacts/templates/` - Reusable documentation templates
-- `agent/resources/` - Agent resources and workflow definitions
+- `agent/resources/` - Agent resources and guides
+- `agent/workflows/` - Workflow definitions
 - `agent/metadata/` - Private agent metadata
 - `scripts/` - Utility scripts
 EOF
@@ -189,6 +191,20 @@ git checkout "$VERSION" --quiet
 echo "Updated to $VERSION"
 EOF
         chmod +x "$target_dir/scripts/update-resources.sh"
+    fi
+
+    if [ ! -f "$target_dir/scripts/update-workflows.sh" ]; then
+        cat > "$target_dir/scripts/update-workflows.sh" << 'EOF'
+#!/usr/bin/env bash
+set -e
+echo "Pulling latest workflow changes..."
+cd "$(dirname "$0")/../agent/workflows"
+git fetch origin --quiet 2>/dev/null || true
+git checkout workflows --quiet 2>/dev/null || true
+git pull origin workflows --quiet 2>/dev/null || true
+echo "Updated to latest workflows"
+EOF
+        chmod +x "$target_dir/scripts/update-workflows.sh"
     fi
 
     if [ ! -f "$target_dir/scripts/update-metadata.sh" ]; then
@@ -315,6 +331,20 @@ if [ -n "$EXTERNAL_REPO" ]; then
         echo "✓ agent/resources submodule exists"
     fi
     
+    if [ ! -d "$ENG_PATH/agent/workflows/.git" ] && [ ! -f "$ENG_PATH/agent/workflows/.git" ]; then
+        rm -rf "$ENG_PATH/agent/workflows" 2>/dev/null || true
+        git submodule add -b workflows "https://github.com/m2ux/workflow-server.git" "$ENG_PATH/agent/workflows" 2>/dev/null || true
+        if [ -d "$ENG_PATH/agent/workflows" ]; then
+            cd "$ENG_PATH/agent/workflows"
+            git checkout workflows 2>/dev/null || true
+            cd "$TEMP_CLONE"
+            echo "✓ Added agent/workflows submodule"
+            NEEDS_COMMIT=true
+        fi
+    else
+        echo "✓ agent/workflows submodule exists"
+    fi
+    
     if [ "$SKIP_METADATA" = false ]; then
         if [ ! -d "$ENG_PATH/agent/metadata/.git" ] && [ ! -f "$ENG_PATH/agent/metadata/.git" ]; then
             rm -rf "$ENG_PATH/agent/metadata" 2>/dev/null || true
@@ -382,6 +412,18 @@ if [ -n "$EXTERNAL_REPO" ]; then
         echo "✓ agent/resources ($RESOURCES_VERSION)"
     fi
     
+    # Clone workflows (only if not already present)
+    if [ ! -d "agent/workflows/.git" ]; then
+        rm -rf agent/workflows 2>/dev/null || true
+        if git clone -b workflows "https://github.com/m2ux/workflow-server.git" agent/workflows 2>/dev/null; then
+            echo "✓ agent/workflows (workflows branch)"
+        else
+            echo "⚠ agent/workflows skipped"
+        fi
+    else
+        echo "✓ agent/workflows exists"
+    fi
+    
     # Clone metadata with sparse checkout
     if [ "$SKIP_METADATA" = false ]; then
         rm -rf agent/metadata 2>/dev/null || true
@@ -439,6 +481,13 @@ else
             cd ../..
         fi
         
+        git submodule add -b workflows "https://github.com/m2ux/workflow-server.git" agent/workflows 2>/dev/null || true
+        if [ -d "agent/workflows" ]; then
+            cd agent/workflows
+            git checkout workflows 2>/dev/null || true
+            cd ../..
+        fi
+        
         if [ "$SKIP_METADATA" = false ]; then
             git submodule add "$METADATA_REPO" agent/metadata 2>/dev/null || true
             if [ -d "agent/metadata" ]; then
@@ -473,6 +522,12 @@ else
     
     if [ -f .gitmodules ]; then
         git submodule update --init agent/resources 2>/dev/null && echo "✓ agent/resources" || true
+        
+        if git submodule update --init agent/workflows 2>/dev/null; then
+            echo "✓ agent/workflows"
+        else
+            echo "⚠ agent/workflows skipped"
+        fi
         
         if [ "$SKIP_METADATA" = false ]; then
             if git submodule update --init agent/metadata 2>/dev/null; then
