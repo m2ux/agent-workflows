@@ -358,7 +358,7 @@ Update the description to reflect completed work:
 
 ## Updating PR Descriptions
 
-Use the GitHub API when `gh pr edit` encounters issues:
+Always use the GitHub API for PR updates (`gh pr edit` uses GraphQL which fails due to Projects Classic deprecation):
 
 ```bash
 # Write the PR body to a file
