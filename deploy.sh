@@ -276,11 +276,65 @@ if ! grep -q "^\.engineering/$" "$EXCLUDE_FILE" 2>/dev/null; then
     echo "✓ Added .engineering/ to local git exclude"
 fi
 
-# Remove existing .engineering if present
+# Handle existing .engineering - migrate data if present
+MIGRATION_BACKUP=""
 if [ -d "$ENGINEERING_DIR" ]; then
+    # Check if there's content to migrate (artifacts folder with files)
+    if [ -d "$ENGINEERING_DIR/artifacts" ] && [ -n "$(find "$ENGINEERING_DIR/artifacts" -type f 2>/dev/null | head -1)" ]; then
+        MIGRATION_BACKUP="${ENGINEERING_DIR}_migration_$$"
+        echo "Found existing artifacts to migrate..."
+        echo "  Backing up to: $MIGRATION_BACKUP"
+        cp -r "$ENGINEERING_DIR" "$MIGRATION_BACKUP"
+        echo "  ✓ Backup complete ($(find "$MIGRATION_BACKUP/artifacts" -type f 2>/dev/null | wc -l) files)"
+    fi
     echo "Removing existing .engineering/..."
     rm -rf "$ENGINEERING_DIR"
 fi
+
+# Function to migrate backed up data into new engineering folder
+migrate_existing_data() {
+    local target_dir="$1"
+    
+    if [ -z "$MIGRATION_BACKUP" ] || [ ! -d "$MIGRATION_BACKUP" ]; then
+        return 0
+    fi
+    
+    echo ""
+    echo "Migrating existing artifacts..."
+    
+    # Copy artifacts folder (the main content to preserve)
+    if [ -d "$MIGRATION_BACKUP/artifacts" ]; then
+        cp -r "$MIGRATION_BACKUP/artifacts"/* "$target_dir/artifacts/" 2>/dev/null || true
+        echo "  ✓ Migrated artifacts"
+    fi
+    
+    # Copy resources folder if it exists and target doesn't have it
+    if [ -d "$MIGRATION_BACKUP/resources" ] && [ ! -d "$target_dir/resources" ]; then
+        cp -r "$MIGRATION_BACKUP/resources" "$target_dir/" 2>/dev/null || true
+        echo "  ✓ Migrated resources"
+    fi
+    
+    # Commit and push migrated data
+    cd "$target_dir"
+    if [ -d .git ] || [ -f .git ]; then
+        if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
+            git add -A
+            git commit -m "docs: migrate existing engineering artifacts" 2>/dev/null || true
+            echo "  ✓ Committed migrated data"
+            
+            # Push to remote (with timeout to avoid hanging)
+            if timeout 30 git push origin HEAD 2>/dev/null; then
+                echo "  ✓ Pushed migrated data to remote"
+            else
+                echo "  ⚠ Push failed or timed out - run 'git push' manually in .engineering/"
+            fi
+        fi
+    fi
+    
+    # Clean up backup
+    rm -rf "$MIGRATION_BACKUP"
+    echo "  ✓ Cleaned up migration backup"
+}
 
 if [ -n "$EXTERNAL_REPO" ]; then
     # ==========================================================================
@@ -441,6 +495,9 @@ if [ -n "$EXTERNAL_REPO" ]; then
     
     echo "✓ Deployed to .engineering/"
     
+    # Migrate existing data if backup exists
+    migrate_existing_data "$ENGINEERING_DIR"
+    
 else
     # ==========================================================================
     # In-Repo Mode (Orphan Branch)
@@ -542,6 +599,9 @@ else
             fi
         fi
     fi
+    
+    # Migrate existing data if backup exists (in-repo mode)
+    migrate_existing_data "$ENGINEERING_DIR"
 fi
 
 cd "$REPO_ROOT"
