@@ -445,6 +445,8 @@ if [ -n "$EXTERNAL_REPO" ]; then
     if [ -d "$ENGINEERING_DIR/engineering/$PROJECT_NAME" ]; then
         mv "$ENGINEERING_DIR" "${ENGINEERING_DIR}_tmp"
         mv "${ENGINEERING_DIR}_tmp/engineering/$PROJECT_NAME" "$ENGINEERING_DIR"
+        # Preserve the .git directory so .engineering remains a git repo
+        mv "${ENGINEERING_DIR}_tmp/.git" "$ENGINEERING_DIR/.git"
         rm -rf "${ENGINEERING_DIR}_tmp"
     fi
     
